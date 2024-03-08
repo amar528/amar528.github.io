@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fd246a90-0554-4dc1-bd48-8e995ff95995" name="Changes" comment="Post regex">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copyspecial/copyspecial.py" beforeDir="false" afterPath="$PROJECT_DIR$/copyspecial/copyspecial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../minesweeper" beforeDir="false" afterPath="$PROJECT_DIR$/../minesweeper" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copyspecial/to-dir/xyz__hello__.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copyspecial/to-dir/zz__something__.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copyspecial/zip-file.tar.gz" beforeDir="false" afterPath="$PROJECT_DIR$/copyspecial/zip-file.tar.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copyspecial/zip-file/xyz__hello__.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/copyspecial/zip-file/zz__something__.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +18,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;amar528&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="61b0c828-f253-4616-a238-1b7ce2cf2aa4" />
+        <option name="url" value="https://github.com/amar528/python.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -42,7 +59,9 @@
     "Python.wordcount.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main"
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "/Users/amar/Documents/python/googleProject",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
   <component name="RunManager" selected="Python.copyspecial tozip">
@@ -265,6 +284,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
     <MESSAGE value="Init" />
     <MESSAGE value="Post regex" />
     <option name="LAST_COMMIT_MESSAGE" value="Post regex" />
