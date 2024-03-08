@@ -94,11 +94,14 @@ def download_images(img_urls, dest_dir):
             save_path = os.path.join(dest_dir, local_name)
 
             print(f'Downloading {_url} ...')
-            urllib.request.urlretrieve(_url, save_path)
+            path, headers = urllib.request.urlretrieve(_url, save_path)
             print(f'... saved to {save_path}')
 
-            local_names.append(local_name)
-            count += 1
+            if headers.get_content_type() in ['image/jpeg', 'image/png', 'image/gif']:
+                local_names.append(local_name)
+                count += 1
+            else:
+                os.remove(save_path)
 
         except HTTPError as err:
             print(f'Error retrieving {_url} : {err}')
