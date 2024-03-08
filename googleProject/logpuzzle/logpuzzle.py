@@ -21,11 +21,11 @@ Here's what a puzzle url looks like:
 
 
 def extract_urls(file_text):
-    url_regex = r'GET\s+(\w+)\s+HTTP'
-    matches = re.search(url_regex, file_text)
+    url_regex = r'GET\s+(.+)\s+HTTP'
+    matches = re.findall(url_regex, file_text)
 
     if matches:
-        return ''
+        return matches
     else:
         print('Error: failed to extract URL data')
         sys.exit(1)
@@ -39,8 +39,20 @@ def read_urls(filename):
     # +++your code here+++
     f = open(filename, 'rt', encoding='utf-8')
     file_text = f.read()
-    urls = extract_urls(file_text)
+    extracted_urls = extract_urls(file_text)
 
+    _idx = filename.index('_')
+    _idx += 1
+    server_part = filename[_idx:]
+    print(f'Server: {server_part}')
+
+    urls = []
+    for _url in extracted_urls:
+        item = server_part + _url
+        if item not in urls:
+            urls.append(item)
+
+    return sorted(urls)
 
 def download_images(img_urls, dest_dir):
     """Given the urls already in the correct order, downloads
