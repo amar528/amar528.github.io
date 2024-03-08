@@ -21,7 +21,7 @@ Here's what a puzzle url looks like:
 
 
 def extract_urls(file_text):
-    url_regex = r'Popularity in (\d+)'
+    url_regex = r'GET\s+(\w+)\s+HTTP'
     matches = re.search(url_regex, file_text)
 
     if matches:

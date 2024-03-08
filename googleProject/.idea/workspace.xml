@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd246a90-0554-4dc1-bd48-8e995ff95995" name="Changes" comment="Add do_get, catch io exceptions and exit in case of error">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="fd246a90-0554-4dc1-bd48-8e995ff95995" name="Changes" comment="Start extract urls">
       <change beforePath="$PROJECT_DIR$/logpuzzle/logpuzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/logpuzzle/logpuzzle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -308,7 +307,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709876458190</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Start extract urls">
+      <option name="closed" value="true" />
+      <created>1709876755814</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1709876755814</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -358,6 +365,7 @@
     <MESSAGE value="Delete solutions" />
     <MESSAGE value="gitignore" />
     <MESSAGE value="Add do_get, catch io exceptions and exit in case of error" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add do_get, catch io exceptions and exit in case of error" />
+    <MESSAGE value="Start extract urls" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start extract urls" />
   </component>
 </project>
