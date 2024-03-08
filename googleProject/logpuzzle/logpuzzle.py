@@ -20,12 +20,26 @@ Here's what a puzzle url looks like:
 """
 
 
+def extract_urls(file_text):
+    url_regex = r'Popularity in (\d+)'
+    matches = re.search(url_regex, file_text)
+
+    if matches:
+        return ''
+    else:
+        print('Error: failed to extract URL data')
+        sys.exit(1)
+
+
 def read_urls(filename):
     """Returns a list of the puzzle urls from the given log file,
     extracting the hostname from the filename itself.
     Screens out duplicate urls and returns the urls sorted into
     increasing order."""
     # +++your code here+++
+    f = open(filename, 'rt', encoding='utf-8')
+    file_text = f.read()
+    urls = extract_urls(file_text)
 
 
 def download_images(img_urls, dest_dir):
