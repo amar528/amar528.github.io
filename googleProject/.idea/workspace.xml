@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd246a90-0554-4dc1-bd48-8e995ff95995" name="Changes" comment="Start extract urls - regex">
+    <list default="true" id="fd246a90-0554-4dc1-bd48-8e995ff95995" name="Changes" comment="extract urls and server">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logpuzzle/logpuzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/logpuzzle/logpuzzle.py" afterDir="false" />
     </list>
@@ -50,6 +50,7 @@
     "Python.copyspecial tozip.executor": "Run",
     "Python.list1.executor": "Run",
     "Python.list2.executor": "Run",
+    "Python.logpuzzle todir.executor": "Run",
     "Python.logpuzzle.executor": "Run",
     "Python.mimic.executor": "Run",
     "Python.string1.executor": "Run",
@@ -64,7 +65,7 @@
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.logpuzzle">
+  <component name="RunManager" selected="Python.logpuzzle todir">
     <configuration name="babynames" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="googleProject" />
       <option name="ENV_FILES" value="" />
@@ -146,6 +147,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/copyspecial/copyspecial.py" />
       <option name="PARAMETERS" value="--tozip zip-file.tar.gz ." />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="logpuzzle todir" type="PythonConfigurationType" factoryName="Python">
+      <module name="googleProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/logpuzzle" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/logpuzzle/logpuzzle.py" />
+      <option name="PARAMETERS" value="--todir downloads animal_code.google.com" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -243,6 +266,7 @@
     </configuration>
     <list>
       <item itemvalue="Python.logpuzzle" />
+      <item itemvalue="Python.logpuzzle todir" />
       <item itemvalue="Python.babynames" />
       <item itemvalue="Python.copyspecial basic" />
       <item itemvalue="Python.copyspecial todir" />
@@ -348,7 +372,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709876824323</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="extract urls and server">
+      <option name="closed" value="true" />
+      <created>1709881454766</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1709881454766</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -400,17 +432,7 @@
     <MESSAGE value="Add do_get, catch io exceptions and exit in case of error" />
     <MESSAGE value="Start extract urls" />
     <MESSAGE value="Start extract urls - regex" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start extract urls - regex" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/logpuzzle/logpuzzle.py</url>
-          <line>54</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="extract urls and server" />
+    <option name="LAST_COMMIT_MESSAGE" value="extract urls and server" />
   </component>
 </project>

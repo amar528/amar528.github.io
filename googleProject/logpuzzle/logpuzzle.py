@@ -2,7 +2,7 @@
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
 # http://www.apache.org/licenses/LICENSE-2.0
-
+import encodings.utf_8
 # Google's Python Class
 # http://code.google.com/edu/languages/google-python-class/
 
@@ -10,6 +10,7 @@ import os
 import re
 import sys
 import urllib
+from urllib.error import HTTPError
 from urllib.request import urlopen
 
 """Logpuzzle exercise
@@ -48,11 +49,12 @@ def read_urls(filename):
 
     urls = []
     for _url in extracted_urls:
-        item = server_part + _url
+        item = 'http://' + server_part + _url
         if item not in urls:
             urls.append(item)
 
     return sorted(urls)
+
 
 def download_images(img_urls, dest_dir):
     """Given the urls already in the correct order, downloads
@@ -62,16 +64,29 @@ def download_images(img_urls, dest_dir):
     with an img tag to show each local image file.
     Creates the directory if necessary.
     """
+    if not os.path.exists(dest_dir):
+        os.mkdir(dest_dir)
+
+    count = 0
+    for _url in img_urls:
+        try:
+            local_name = f'img{count}'
+            urllib.request.urlretrieve(_url, os.path.join(dest_dir, local_name))
+        except HTTPError as err:
+            print(f'Error retrieving {_url} : {err}')
+        count += 1
 
     # +++your code here+++
-    def do_get(url):
-        try:
-            ufile = urlopen(url)
-            if ufile.info().get_content_type() == 'text/html':
-                return ufile.read()
-        except IOError:
-            print('problem reading url:', url)
-            sys.exit(1)
+
+
+def do_get(url):
+    try:
+        ufile = urlopen(url)
+        if ufile.info().get_content_type() in ['image/jpeg', 'image/png', 'image/gif']:
+            return ufile.read()
+    except IOError:
+        print('problem reading url:', url)
+        return None
 
 
 def main():
