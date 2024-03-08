@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd246a90-0554-4dc1-bd48-8e995ff95995" name="Changes" comment="gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logpuzzle/logpuzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/logpuzzle/logpuzzle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +29,9 @@
         <option name="url" value="https://github.com/amar528/python.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
