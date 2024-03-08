@@ -62,10 +62,10 @@ def add_to_index_html(dest_dir, local_names):
     f.write('<html><body>')
 
     for local_name in local_names:
-        anchor_tag = f'<img src=\'{local_name}\' />'
+        anchor_tag = f'<img src=\'{local_name}\'/>'
         f.write(anchor_tag)
-        f.write('\n')
 
+    f.write('\n')
     f.write('</body></html>')
 
     f.flush()
