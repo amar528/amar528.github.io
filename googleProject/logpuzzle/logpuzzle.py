@@ -56,6 +56,22 @@ def read_urls(filename):
     return sorted(urls)
 
 
+def add_to_index_html(dest_dir, local_names):
+    f = open(os.path.join(dest_dir, 'index.html'), 'at', encoding='utf-8')
+
+    f.write('<html><body>')
+
+    for local_name in local_names:
+        anchor_tag = f'<img src=\'{local_name}\'/>'
+        f.write(anchor_tag)
+
+    f.write('\n')
+    f.write('</body></html>')
+
+    f.flush()
+    f.close()
+
+
 def download_images(img_urls, dest_dir):
     """Given the urls already in the correct order, downloads
     each image into the given directory.
@@ -68,20 +84,29 @@ def download_images(img_urls, dest_dir):
         os.mkdir(dest_dir)
 
     count = 0
+    local_names = []
     for _url in img_urls:
         try:
             suffix = _url[-4:]
             local_name = f'img{count}'
             if '.' in suffix:
                 local_name += f'{suffix}'
-
             save_path = os.path.join(dest_dir, local_name)
+
             print(f'Downloading {_url} ...')
-            urllib.request.urlretrieve(_url, save_path)
+            path, headers = urllib.request.urlretrieve(_url, save_path)
             print(f'... saved to {save_path}')
+
+            if headers.get_content_type() in ['image/jpeg', 'image/png', 'image/gif']:
+                local_names.append(local_name)
+                count += 1
+            else:
+                os.remove(save_path)
+
         except HTTPError as err:
             print(f'Error retrieving {_url} : {err}')
-        count += 1
+
+    add_to_index_html(dest_dir, local_names)
 
 
 def main():
