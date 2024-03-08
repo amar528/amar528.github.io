@@ -66,7 +66,7 @@ def add_to_index_html(dest_dir, local_names):
         f.write(anchor_tag)
         f.write('\n')
 
-    f.write('</body></html')
+    f.write('</body></html>')
 
     f.flush()
     f.close()
