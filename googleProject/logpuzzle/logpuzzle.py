@@ -44,12 +44,12 @@ def read_urls(filename):
 
     _idx = filename.index('_')
     _idx += 1
-    server_part = filename[_idx:]
-    print(f'Server: {server_part}')
+    _host = filename[_idx:]
+    print(f'Host: {_host}')
 
     urls = []
     for _url in extracted_urls:
-        item = 'http://' + server_part + _url
+        item = 'http://' + _host + _url
         if item not in urls:
             urls.append(item)
 
@@ -70,23 +70,18 @@ def download_images(img_urls, dest_dir):
     count = 0
     for _url in img_urls:
         try:
+            suffix = _url[-4:]
             local_name = f'img{count}'
-            urllib.request.urlretrieve(_url, os.path.join(dest_dir, local_name))
+            if '.' in suffix:
+                local_name += f'{suffix}'
+
+            save_path = os.path.join(dest_dir, local_name)
+            print(f'Downloading {_url} ...')
+            urllib.request.urlretrieve(_url, save_path)
+            print(f'... saved to {save_path}')
         except HTTPError as err:
             print(f'Error retrieving {_url} : {err}')
         count += 1
-
-    # +++your code here+++
-
-
-def do_get(url):
-    try:
-        ufile = urlopen(url)
-        if ufile.info().get_content_type() in ['image/jpeg', 'image/png', 'image/gif']:
-            return ufile.read()
-    except IOError:
-        print('problem reading url:', url)
-        return None
 
 
 def main():
