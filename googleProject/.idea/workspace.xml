@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd246a90-0554-4dc1-bd48-8e995ff95995" name="Changes" comment="gitignore">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,27 +38,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.babynames.executor": "Run",
-    "Python.copyspecial basic.executor": "Run",
-    "Python.copyspecial todir.executor": "Run",
-    "Python.copyspecial tozip.executor": "Run",
-    "Python.list1.executor": "Run",
-    "Python.list2.executor": "Run",
-    "Python.mimic.executor": "Run",
-    "Python.string1.executor": "Run",
-    "Python.string2.executor": "Run",
-    "Python.wordcount (count).executor": "Run",
-    "Python.wordcount (topcount).executor": "Run",
-    "Python.wordcount.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
-    "last_opened_file_path": "/Users/amar/Documents/python/googleProject",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.babynames.executor&quot;: &quot;Run&quot;,
+    &quot;Python.copyspecial basic.executor&quot;: &quot;Run&quot;,
+    &quot;Python.copyspecial todir.executor&quot;: &quot;Run&quot;,
+    &quot;Python.copyspecial tozip.executor&quot;: &quot;Run&quot;,
+    &quot;Python.list1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.list2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.mimic.executor&quot;: &quot;Run&quot;,
+    &quot;Python.string1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.string2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.wordcount (count).executor&quot;: &quot;Run&quot;,
+    &quot;Python.wordcount (topcount).executor&quot;: &quot;Run&quot;,
+    &quot;Python.wordcount.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/amar/Documents/python/googleProject&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.copyspecial tozip">
     <configuration name="babynames" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="googleProject" />
@@ -217,10 +215,10 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.babynames" />
       <item itemvalue="Python.copyspecial basic" />
       <item itemvalue="Python.copyspecial todir" />
       <item itemvalue="Python.copyspecial tozip" />
-      <item itemvalue="Python.babynames" />
       <item itemvalue="Python.mimic" />
       <item itemvalue="Python.wordcount (count)" />
       <item itemvalue="Python.wordcount (topcount)" />
@@ -290,7 +288,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709866541442</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="gitignore">
+      <option name="closed" value="true" />
+      <created>1709866766409</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1709866766409</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
