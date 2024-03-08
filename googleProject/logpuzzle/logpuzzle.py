@@ -98,10 +98,10 @@ def download_images(img_urls, dest_dir):
             print(f'... saved to {save_path}')
 
             local_names.append(local_name)
+            count += 1
 
         except HTTPError as err:
             print(f'Error retrieving {_url} : {err}')
-        count += 1
 
     add_to_index_html(dest_dir, local_names)
 
