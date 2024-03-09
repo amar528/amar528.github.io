@@ -32,6 +32,18 @@ def extract_urls(file_text):
         sys.exit(1)
 
 
+def sort_url(_url):
+    #  Test to see if the URL matches the form word-word.
+    #  If it does, sort by the second word. Otherwise, use the whole URL as the sort key
+    second_part_regex = r'\w+-(\w+)[.]'
+    _match = re.search(second_part_regex, _url)
+
+    if _match:
+        return _match.group(1)
+    else:
+        return _url
+
+
 def read_urls(filename):
     """Returns a list of the puzzle urls from the given log file,
     extracting the hostname from the filename itself.
@@ -40,6 +52,7 @@ def read_urls(filename):
     # +++your code here+++
     f = open(filename, 'rt', encoding='utf-8')
     file_text = f.read()
+    f.close()
     extracted_urls = extract_urls(file_text)
 
     _idx = filename.index('_')
@@ -56,22 +69,6 @@ def read_urls(filename):
     return sorted(urls)
 
 
-def add_to_index_html(dest_dir, local_names):
-    f = open(os.path.join(dest_dir, 'index.html'), 'at', encoding='utf-8')
-
-    f.write('<html><body>')
-
-    for local_name in local_names:
-        anchor_tag = f'<img src=\'{local_name}\'/>'
-        f.write(anchor_tag)
-
-    f.write('\n')
-    f.write('</body></html>')
-
-    f.flush()
-    f.close()
-
-
 def download_images(img_urls, dest_dir):
     """Given the urls already in the correct order, downloads
     each image into the given directory.
@@ -85,18 +82,23 @@ def download_images(img_urls, dest_dir):
 
     count = 0
     local_names = []
+
+    #  TODO this is a good case for concurrency, rather than serial requests
     for _url in img_urls:
         try:
             suffix = _url[-4:]
             local_name = f'img{count}'
             if '.' in suffix:
                 local_name += f'{suffix}'
+
             save_path = os.path.join(dest_dir, local_name)
 
             print(f'Downloading {_url} ...')
             path, headers = urllib.request.urlretrieve(_url, save_path)
             print(f'... saved to {save_path}')
 
+            #  images are supported, otherwise we'll delete the file
+            # TODO it would be better to perform a HEAD here and perform this assertion prior to downloading
             if headers.get_content_type() in ['image/jpeg', 'image/png', 'image/gif']:
                 local_names.append(local_name)
                 count += 1
@@ -105,8 +107,7 @@ def download_images(img_urls, dest_dir):
 
         except HTTPError as err:
             print(f'Error retrieving {_url} : {err}')
-
-    add_to_index_html(dest_dir, local_names)
+        count += 1
 
 
 def main():
