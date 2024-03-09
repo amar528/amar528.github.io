@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd246a90-0554-4dc1-bd48-8e995ff95995" name="Changes" comment="Add sorting with regex to handle 'places' use case" />
+    <list default="true" id="fd246a90-0554-4dc1-bd48-8e995ff95995" name="Changes" comment="Add sorting with regex to handle 'places' use case">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logpuzzle/logpuzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/logpuzzle/logpuzzle.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,31 +49,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.babynames.executor": "Run",
-    "Python.copyspecial basic.executor": "Run",
-    "Python.copyspecial todir.executor": "Run",
-    "Python.copyspecial tozip.executor": "Run",
-    "Python.list1.executor": "Run",
-    "Python.list2.executor": "Run",
-    "Python.logpuzzle animal.executor": "Run",
-    "Python.logpuzzle place.executor": "Run",
-    "Python.logpuzzle todir.executor": "Run",
-    "Python.logpuzzle.executor": "Run",
-    "Python.mimic.executor": "Run",
-    "Python.string1.executor": "Run",
-    "Python.string2.executor": "Run",
-    "Python.wordcount (count).executor": "Run",
-    "Python.wordcount (topcount).executor": "Run",
-    "Python.wordcount.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
-    "last_opened_file_path": "/Users/amar/Documents/python/googleProject",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.babynames.executor&quot;: &quot;Run&quot;,
+    &quot;Python.copyspecial basic.executor&quot;: &quot;Run&quot;,
+    &quot;Python.copyspecial todir.executor&quot;: &quot;Run&quot;,
+    &quot;Python.copyspecial tozip.executor&quot;: &quot;Run&quot;,
+    &quot;Python.list1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.list2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.logpuzzle animal.executor&quot;: &quot;Run&quot;,
+    &quot;Python.logpuzzle place.executor&quot;: &quot;Run&quot;,
+    &quot;Python.logpuzzle todir.executor&quot;: &quot;Run&quot;,
+    &quot;Python.logpuzzle.executor&quot;: &quot;Run&quot;,
+    &quot;Python.mimic.executor&quot;: &quot;Run&quot;,
+    &quot;Python.string1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.string2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.wordcount (count).executor&quot;: &quot;Run&quot;,
+    &quot;Python.wordcount (topcount).executor&quot;: &quot;Run&quot;,
+    &quot;Python.wordcount.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/amar/Documents/python/googleProject&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.logpuzzle place">
     <configuration name="babynames" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="googleProject" />
@@ -563,7 +566,8 @@
     <MESSAGE value="Add index.html creation" />
     <MESSAGE value="Tidy up - animal solution.  TODO - place case sorting" />
     <MESSAGE value="Add sorting with regex to handle 'places' use case" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add sorting with regex to handle 'places' use case" />
+    <MESSAGE value="Start to add concurrency for image downloads" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start to add concurrency for image downloads" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -66,7 +66,7 @@ def read_urls(filename):
         if item not in urls:
             urls.append(item)
 
-    return sorted(urls)
+    return sorted(urls, key=sort_url)
 
 
 def download_images(img_urls, dest_dir):
