@@ -10,6 +10,7 @@ import os
 import re
 import sys
 import urllib
+from concurrent.futures import ThreadPoolExecutor
 from urllib.error import HTTPError
 from urllib.request import urlopen
 
@@ -66,7 +67,23 @@ def read_urls(filename):
         if item not in urls:
             urls.append(item)
 
-    return sorted(urls)
+    return sorted(urls, key=sort_url)
+
+
+def download_img(img_url, save_path):
+    try:
+        print(f'Downloading {img_url} ...')
+        path, headers = urllib.request.urlretrieve(img_url, save_path)
+        print(f'... saved to {save_path}')
+
+        #  images are supported, otherwise we'll delete the file
+        # TODO it would be more efficient to perform a HEAD here and perform this assertion prior to downloading
+        if not headers.get_content_type() in ['image/jpeg', 'image/png', 'image/gif']:
+            os.remove(save_path)
+
+        return headers
+    except HTTPError as err:
+        print(f'Error retrieving {img_url} : {err}')
 
 
 def download_images(img_urls, dest_dir):
@@ -81,34 +98,22 @@ def download_images(img_urls, dest_dir):
         os.mkdir(dest_dir)
 
     count = 0
-    local_names = []
+    requests = []
 
-    #  TODO this is a good case for concurrency, rather than serial requests
     for _url in img_urls:
-        try:
-            suffix = _url[-4:]
-            local_name = f'img{count}'
-            if '.' in suffix:
-                local_name += f'{suffix}'
+        #  build requests
+        suffix = _url[-4:]
+        local_name = f'img{count}'
+        if '.' in suffix:
+            local_name += f'{suffix}'
+        save_path = os.path.join(dest_dir, local_name)
 
-            save_path = os.path.join(dest_dir, local_name)
-
-            print(f'Downloading {_url} ...')
-            path, headers = urllib.request.urlretrieve(_url, save_path)
-            print(f'... saved to {save_path}')
-
-            #  images are supported, otherwise we'll delete the file
-            # TODO it would be better to perform a HEAD here and perform this assertion prior to downloading
-            if headers.get_content_type() in ['image/jpeg', 'image/png', 'image/gif']:
-                local_names.append(local_name)
-                count += 1
-            else:
-                os.remove(save_path)
-
-        except HTTPError as err:
-            print(f'Error retrieving {_url} : {err}')
+        requests.append((_url, save_path))
         count += 1
 
+    # initialize ThreadPoolExecutor and use it to call download_img() in parallel
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        executor.map(download_img, requests)
 
 def main():
     args = sys.argv[1:]

@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd246a90-0554-4dc1-bd48-8e995ff95995" name="Changes" comment="Add sorting with regex to handle 'places' use case">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logpuzzle/logpuzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/logpuzzle/logpuzzle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,7 @@
     "Python.copyspecial tozip.executor": "Run",
     "Python.list1.executor": "Run",
     "Python.list2.executor": "Run",
-    "Python.logpuzzle animal.executor": "Run",
+    "Python.logpuzzle animal.executor": "Debug",
     "Python.logpuzzle place.executor": "Run",
     "Python.logpuzzle todir.executor": "Run",
     "Python.logpuzzle.executor": "Run",
@@ -78,7 +79,7 @@
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.logpuzzle place">
+  <component name="RunManager" selected="Python.logpuzzle animal">
     <configuration name="babynames" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="googleProject" />
       <option name="ENV_FILES" value="" />
@@ -520,7 +521,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709942817283</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Add sorting with regex to handle 'places' use case">
+      <option name="closed" value="true" />
+      <created>1709943276479</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1709943276479</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -582,6 +591,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/logpuzzle/logpuzzle.py</url>
+          <line>114</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
