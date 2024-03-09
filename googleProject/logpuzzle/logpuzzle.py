@@ -66,23 +66,7 @@ def read_urls(filename):
         if item not in urls:
             urls.append(item)
 
-    return sorted(urls, key=sort_url)
-
-
-def add_to_index_html(dest_dir, local_names):
-    f = open(os.path.join(dest_dir, 'index.html'), 'at', encoding='utf-8')
-
-    f.write('<html><body>')
-
-    for local_name in local_names:
-        anchor_tag = f'<img src=\'{local_name}\'/>'
-        f.write(anchor_tag)
-
-    f.write('\n')
-    f.write('</body></html>')
-
-    f.flush()
-    f.close()
+    return sorted(urls)
 
 
 def download_images(img_urls, dest_dir):
@@ -106,6 +90,7 @@ def download_images(img_urls, dest_dir):
             local_name = f'img{count}'
             if '.' in suffix:
                 local_name += f'{suffix}'
+
             save_path = os.path.join(dest_dir, local_name)
 
             print(f'Downloading {_url} ...')
@@ -122,8 +107,7 @@ def download_images(img_urls, dest_dir):
 
         except HTTPError as err:
             print(f'Error retrieving {_url} : {err}')
-
-    add_to_index_html(dest_dir, local_names)
+        count += 1
 
 
 def main():
