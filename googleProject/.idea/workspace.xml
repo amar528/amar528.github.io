@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd246a90-0554-4dc1-bd48-8e995ff95995" name="Changes" comment="Add sorting with regex to handle 'places' use case" />
+    <list default="true" id="fd246a90-0554-4dc1-bd48-8e995ff95995" name="Changes" comment="Add sorting with regex to handle 'places' use case">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +16,11 @@
     <option name="BRANCH" value="origin/main" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -66,7 +73,7 @@
     "Python.wordcount.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "add-concurrency",
     "last_opened_file_path": "/Users/amar/Documents/python/googleProject",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
@@ -505,7 +512,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709942331020</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Add sorting with regex to handle 'places' use case">
+      <option name="closed" value="true" />
+      <created>1709942817283</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1709942817283</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
