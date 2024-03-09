@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd246a90-0554-4dc1-bd48-8e995ff95995" name="Changes" comment="Tidy up - animal solution.  TODO - place case sorting">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logpuzzle/logpuzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/logpuzzle/logpuzzle.py" afterDir="false" />
-    </list>
+    <list default="true" id="fd246a90-0554-4dc1-bd48-8e995ff95995" name="Changes" comment="Add sorting with regex to handle 'places' use case" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,7 +55,7 @@
     "Python.list1.executor": "Run",
     "Python.list2.executor": "Run",
     "Python.logpuzzle animal.executor": "Run",
-    "Python.logpuzzle place.executor": "Debug",
+    "Python.logpuzzle place.executor": "Run",
     "Python.logpuzzle todir.executor": "Run",
     "Python.logpuzzle.executor": "Run",
     "Python.mimic.executor": "Run",
@@ -500,7 +497,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709935287484</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Add sorting with regex to handle 'places' use case">
+      <option name="closed" value="true" />
+      <created>1709942331020</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1709942331020</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -557,7 +562,8 @@
     <MESSAGE value="gitignore" />
     <MESSAGE value="Add index.html creation" />
     <MESSAGE value="Tidy up - animal solution.  TODO - place case sorting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tidy up - animal solution.  TODO - place case sorting" />
+    <MESSAGE value="Add sorting with regex to handle 'places' use case" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add sorting with regex to handle 'places' use case" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
