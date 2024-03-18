@@ -40,4 +40,4 @@ if __name__ == '__main__':
         blocks_list.append(blocks_line)
 
     for blocks in blocks_list:
-        print(check_side_lengths(blocks))
+        check_side_lengths(blocks)
