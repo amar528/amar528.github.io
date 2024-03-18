@@ -1,28 +1,25 @@
 import sys
+from collections import deque
 
 
 def check_side_lengths(blocks):
-    num_blocks = len(blocks)
-    mid_idx = num_blocks // 2
+    d = deque(blocks)
 
-    left_idx = 0
-    right_idx = num_blocks - 1
+    stacked = []
 
-    while left_idx < mid_idx < right_idx:
-        left, right = blocks[left_idx], blocks[right_idx]
+    # Choose left until 1 element remains, and it is >= the next choice to the right
+    while len(d) > 1 and d[0] >= d[1]:
+        stacked.append(d.popleft())
 
-        next_left = blocks[left_idx + 1]
-        next_right = blocks[right_idx - 1]
+    # Choose right until 1 element remains, and it is >= the next choice to the left
+    while len(d) > 1 and d[-1] >= d[-2]:
+        stacked.append(d.pop())
 
-        if (not check_length_choice(left, next_left, next_right)
-                or not check_length_choice(right, next_left, next_right)
-        ):
-            return 'No'
-
-        left_idx += 1
-        right_idx -= 1
-
-    return 'Yes'
+    # if we have a single element left, we have stacked all the boxes
+    if len(d) <= 1:
+        print('Yes')
+    else:
+        print('No')
 
 
 def check_length_choice(choice, next_left, next_right):
