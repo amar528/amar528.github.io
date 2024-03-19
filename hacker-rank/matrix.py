@@ -20,5 +20,5 @@ for j in range(m):
         decoded.append(row[j])
 
 string = ''.join(decoded)
-regex = r'(?<=\w)[^A-Za-z0-9]{2,}(?=\w)'
+regex = r'(?<=\w)[^A-Za-z0-9]{1,}(?=\w)'
 print(re.sub(regex, ' ', string))
