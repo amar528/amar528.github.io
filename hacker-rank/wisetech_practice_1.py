@@ -34,7 +34,7 @@ def degreeOfArray(arr):
     # construct sub arrays for each key (number) using the min, max indices
     lengths = []
     for v in number_indices.values():
-        lengths.append(min(v) + max(v) + 1)
+        lengths.append((max(v) - min(v)) + 1)
 
     # return the minimum length of the sub arrays
     return min(lengths)
