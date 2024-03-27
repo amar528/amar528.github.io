@@ -43,7 +43,7 @@ def get_largest_region(matrix):
         raise ValueError('Invalid grid, has 0 columns')
 
     result = 0
-    visited = [[False for _ in range(rows)] for _ in range(cols)]
+    visited = [[False for _ in range(cols)] for _ in range(rows)]
 
     for row in range(rows):
         for col in range(cols):
