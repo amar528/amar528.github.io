@@ -24,9 +24,6 @@ def dfs(graph, node, visited=None):
 
 
 def journeyToMoon(n, astronaut):
-    print(n)
-    print(astronaut)
-
     astro_map = defaultdict(set)
 
     for a, b in astronaut:
@@ -42,7 +39,6 @@ def journeyToMoon(n, astronaut):
             dfs(astro_map, a, subtree)
             visited.update(subtree)
 
-            print(subtree)
             lengths.append(len(subtree))
 
     result = 0
