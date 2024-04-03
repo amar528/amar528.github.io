@@ -31,3 +31,51 @@ def diagonalDifference(arr):
         backward -= 1
 
     return abs(f_sum - b_sum)
+
+
+def countingSort(arr):
+    result = [0 for _ in range(100)]
+
+    for i in arr:
+        result[i] += 1
+
+    return result
+
+
+def reverse_row(matrix, row):
+    matrix[row].reverse()
+
+
+def reverse_col(matrix, col):
+    strt = 0
+    end = len(matrix) - 1
+    while strt < end:
+        matrix[strt][col], matrix[end][col] = matrix[end][col], matrix[strt][col]
+        strt += 1
+        end -= 1
+
+
+def flipping_the_matrix(matrix):
+    n = len(matrix)
+    quad = n // 2
+
+    for row in matrix:
+        print(row)
+
+    max_sum = 0
+    for r in range(quad):
+        for c in range(quad):
+            print()
+            print(f'[{r}][{c}]')
+            print(f'[{matrix[r][c]}], [{matrix[r][n - c - 1]}]')
+            print(f'[{matrix[n - r - 1][c]}], [{matrix[n - r - 1][n - c - 1]}]')
+
+            biggest = max(
+                matrix[r][c],
+                matrix[r][n - c - 1],
+                matrix[n - r - 1][c],
+                matrix[n - r - 1][n - c - 1]
+            )
+            max_sum += biggest
+
+    return max_sum
