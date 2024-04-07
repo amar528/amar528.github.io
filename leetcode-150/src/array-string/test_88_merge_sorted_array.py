@@ -1,5 +1,5 @@
 from unittest import TestCase
-from arrays.merge_sorted_array_88 import Solution
+from merge_sorted_array_88 import Solution
 
 
 class TestSolution(TestCase):
