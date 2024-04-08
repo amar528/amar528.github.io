@@ -1,12 +1,6 @@
 import collections
 from typing import Optional, List
-
-
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+from binary_tree import *
 
 
 class Solution:
