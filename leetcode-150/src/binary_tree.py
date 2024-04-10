@@ -12,7 +12,7 @@ class TreeNode:
 
 
 def val_or_none(val):
-    if val: return TreeNode(val)
+    if val or val == 0: return TreeNode(val)
     return None
 
 
@@ -24,24 +24,28 @@ def build_tree(nums: List[int]) -> Optional[TreeNode]:
 
     root = TreeNode(nums[0])
 
-    i = 0
     nodes = [root]
-    while i < n:
-        left_idx = i + i + 1
-        right_idx = i + i + 2
+    parent = None
 
-        parent = nodes[i]
+    for i in range(n):
 
-        if left_idx < n:
-            left = val_or_none(nums[left_idx])
-            nodes.append(left)
-            parent.left = left
-        if right_idx < n:
-            right = val_or_none(nums[right_idx])
-            nodes.append(right)
-            parent.right = right
+        if nodes[i]:
+            parent = nodes[i]
 
-        i += 1
+        if parent:
+
+            left_idx = i + i + 1
+            right_idx = i + i + 2
+
+            if left_idx < n:
+                left = val_or_none(nums[left_idx])
+                nodes.append(left)
+                parent.left = left
+
+            if right_idx < n:
+                right = val_or_none(nums[right_idx])
+                nodes.append(right)
+                parent.right = right
 
     return root
 
@@ -63,3 +67,10 @@ def build_tree(nums: List[int]) -> Optional[TreeNode]:
 #         2   3
 #        /
 #       4
+
+# [4, 2, 6, 1, 3]
+#        4
+#       / \
+#      2   6
+#     / \
+#    1   3

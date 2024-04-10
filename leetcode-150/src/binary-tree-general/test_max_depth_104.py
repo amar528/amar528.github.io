@@ -12,4 +12,4 @@ class TestSolution(TestCase):
         sol = Solution()
         result = sol.maxDepth(root)
 
-        self.assertEquals(3, result)
+        self.assertEqual(3, result)
