@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from binary_tree import *
-from mini_abs_diff_bfs_530 import Solution
+from mini_abs_diff_530 import Solution
 
 
 class TestSolution(TestCase):
