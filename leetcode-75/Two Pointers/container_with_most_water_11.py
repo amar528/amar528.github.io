@@ -14,14 +14,21 @@ class Solution:
 
         max_vol_found = 0
 
-        for i, v in enumerate(height):
+        left = 0
+        right = n - 1
 
-            for j in reversed(range(i + 1, n)):
-                distance = j - i
-                u = height[j]
+        while left < right:
+            distance = right - left
 
-                vol = distance * min(v, u)
-                # print(f'vol for {v} - {u} : {vol}')
-                max_vol_found = max(max_vol_found, vol)
+            left_height = height[left]
+            right_height = height[right]
+
+            vol = distance * min(left_height, right_height)
+            max_vol_found = max(max_vol_found, vol)
+
+            if left_height < right_height:
+                left += 1
+            else:
+                right -= 1
 
         return max_vol_found
