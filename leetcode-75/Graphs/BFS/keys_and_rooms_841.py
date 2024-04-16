@@ -7,7 +7,7 @@ class Solution:
         n = len(rooms)
         visited = set()
 
-        def dfs(room, all_keys):
+        def visit(room, all_keys):
             if room >= n or room in visited or room not in all_keys:
                 return False
 
@@ -17,8 +17,8 @@ class Solution:
             all_keys.update(keys)
 
             for key in keys:
-                dfs(key, all_keys)
+                visit(key, all_keys)
 
-        dfs(0, {0})
+        visit(0, {0})
 
         return len(rooms) == len(visited)
