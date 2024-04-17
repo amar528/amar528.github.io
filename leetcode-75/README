@@ -1,62 +1,62 @@
-LeetCode 75 Study
+# LeetCode 75 Study
 
 https://leetcode.com/studyplan/leetcode-75/
 
-Array/String
+## Array/String
 
-1768 - Merge Strings Alternatively
+### 1768 - Merge Strings Alternatively
 Init result list to combined size, use while chars left with len1, len2 and i,j with str.join() result - 30ms beats 88%/93%
 
-Two Pointers
+## Two Pointers
 
-283 - Move Zeros
+### 283 - Move Zeros
 Use I, J. I is main O(n) loop. Only increment J if it is a zero, use pop and append
 130ms beats 45%/78%
 
-11 - Container With Most Water
+### 11 - Container With Most Water
 2 pointer approach left, right with max so far.
 Instead of full iteration, can move pointers conditionally.
 i.e. move left idx if left height is < right height, else move right idx
 528ms beats 50%/89%
 
-Sliding Window
+## Sliding Window
 
-643 - Maximum Average Subarray
+### 643 - Maximum Average Subarray
 Initial try brute force While loop with max so far sliding window times out - O(n * k)
 Sliding window - get sum 0 - k.  Keep presum and postsum total until greater max is found.  Remember to reset the pre/post sum totals
 900ms beats 41%/97%
 
-1456 - Max Num of Vowels in Given Substring Length
+### 1456 - Max Num of Vowels in Given Substring Length
 Left and right window, create substring and use Counter with map function to only return vowel counts. Sum these together.
 Works but too slow for final test cases.  Computing previously counted occurrences could be replaced by dropping the left item from the previous count and adding the right element
 
-Stack
+## Stack
 
-2390 - Remove Stars from String
+### 2390 - Remove Stars from String
 Using deque was slower. Also iterating with index of string was slower.
 Use simple list [] with append(char) and pop() return str join the stack (list)
 117ms beats 98%/62%
 
-Binary Search
+## Binary Search
 
-374 - Guess Number Higher or Lower
+### 374 - Guess Number Higher or Lower
 Find mid = l + (r - l) // 2 - use this to avoid integer overflow
 Start at range 1,n. Too high, move r = mid-1, too low,
 move l = mid + 1
 30 ms beats 83%/68%
 
-Binary Tree
+## Binary Tree
 
-DFS
+### DFS
 
-104 Max Depth
+### 104 Max Depth
 Base case of root is None return 0.
 Return 1 + max of (recurse node.left + recurse node.right)
 35 ms beats 86%/10%
 
-BFS
+### BFS
 
-1161 - Max Level Sum Subtree
+### 1161 - Max Level Sum Subtree
 Use a deque with append and popleft()
 Enqueue the level and node.
 Use default dict to map levels to sum
@@ -64,33 +64,33 @@ Dequeue each node, add its sum to the dict
 Return max of dict with key=dict.get to return the key with max value
 164ms beats 39%/66%
 
-Heap
+## Heap
 
-215 - 4th Largest Element in an Array
+### 215 - 4th Largest Element in an Array
 Using heaps - create negative elements list - heapify it and heap pop k times
 Return the last popped val
 617ms beats 22%/85%
 
-Prefix Sum
+## Prefix Sum
 
-1732 - Find Highest Altitude
+### 1732 - Find Highest Altitude
 Sum previous += current.  Keep track of max() which is initialised at 0, which is the starting point.
 38 ms beats 58%/43%
 
-Graphs
+## Graphs
 
-DFS
+### DFS
 
-841 - Keys and Rooms
+### 841 - Keys and Rooms
 Keep track of visited rooms.  Recurse for room and all_keys set
 For each visited room, iterate recursively for each key
 If key is not in all_keys for that room, exit
 Base cases to exit are if room number is >=n or if the room is already visited
 54ms beats 98%/22%
 
-BFS
+### BFS
 
-1926 - Nearest Exit from Maze Entrance
+### 1926 - Nearest Exit from Maze Entrance
 Use deque as queue for BFS. mark visited as +
 Logic for is valid step, boundaries, wall, entrance
 Enqueue count, next valid steps once visited
