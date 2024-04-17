@@ -4,22 +4,26 @@ from typing import List
 
 class Solution:
 
-    def get_all_next_steps(self, step):
-        next_steps = []
+    def get_next_steps(self, step, maze):
 
         curr_row = step[0]
         curr_col = step[1]
 
-        # up
-        next_steps.append([curr_row - 1, curr_col])
-        # down
-        next_steps.append([curr_row + 1, curr_col])
-        # left
-        next_steps.append([curr_row, curr_col - 1])
-        # right
-        next_steps.append([curr_row, curr_col + 1])
+        up = [curr_row - 1, curr_col]
+        if self.is_valid(up, maze):
+            yield up
 
-        return next_steps
+        down = [curr_row + 1, curr_col]
+        if self.is_valid(down, maze):
+            yield down
+
+        left = [curr_row, curr_col - 1]
+        if self.is_valid(left, maze):
+            yield left
+
+        right = [curr_row, curr_col + 1]
+        if self.is_valid(right, maze):
+            yield right
 
     def is_valid(self, step, maze):
         row = step[0]
@@ -57,24 +61,30 @@ class Solution:
         return False
 
     def nearestExit(self, maze: List[List[str]], entrance: List[int]) -> int:
+
+        # entrance does not contribute to step count
         queue = collections.deque([(-1, entrance)])
-        visited = []
 
         while queue:
             step_count, step = queue.popleft()
 
-            if step in visited:
+            # check visited steps
+            if maze[step[0]][step[1]] == '+':
                 continue
 
-            visited.append(step)
-
             step_count += 1
+            # print(f'visiting {step} count {step_count}')
 
             if self.is_exit(step, maze, entrance):
+                # print(f'exit found, step count {step_count}')
                 return step_count
 
-            for next_step in self.get_all_next_steps(step):
-                if next_step not in visited and self.is_valid(next_step, maze):
-                    queue.append((step_count, next_step))
+            # mark as visited
+            maze[step[0]][step[1]] = '+'
 
+            for next_step in self.get_next_steps(step, maze):
+                # print(f'enqueuing {next_step}')
+                queue.append((step_count, next_step))
+
+        # print('no route found')
         return -1
