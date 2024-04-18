@@ -7,6 +7,11 @@ https://leetcode.com/studyplan/leetcode-75/
 ### 1768 - Merge Strings Alternatively
 Init result list to combined size, use while chars left with len1, len2 and i,j with str.join() result - 30ms beats 88%/93%
 
+### 605 Can Place Flowers
+base cases for n = 0, 1. iterate and check for i == start, end conditions, else check previous and next.
+set val at i to 1, decrement count. at end of each loop check if count has reached zero
+135ms beats 35%/34%
+
 ## Two Pointers
 
 ### 283 - Move Zeros
@@ -29,7 +34,7 @@ Sliding window - get sum 0 - k.  Keep presum and postsum total until greater max
 ### 1456 - Max Num of Vowels in Given Substring Length
 Left and right window, create initial substring window and use Counter with map function to only return vowel counts. Sum these together.
 Then check l and r moving the window at end of the loop, -/+ max count so far
-
+102ms beats 86%/19%
 ## Stack
 
 ### 2390 - Remove Stars from String
