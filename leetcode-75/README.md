@@ -27,8 +27,8 @@ Sliding window - get sum 0 - k.  Keep presum and postsum total until greater max
 900ms beats 41%/97%
 
 ### 1456 - Max Num of Vowels in Given Substring Length
-Left and right window, create substring and use Counter with map function to only return vowel counts. Sum these together.
-Works but too slow for final test cases.  Computing previously counted occurrences could be replaced by dropping the left item from the previous count and adding the right element
+Left and right window, create initial substring window and use Counter with map function to only return vowel counts. Sum these together.
+Then check l and r moving the window at end of the loop, -/+ max count so far
 
 ## Stack
 
