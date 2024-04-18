@@ -39,3 +39,12 @@ class TestSolution(TestCase):
         result = sol.maxVowels(s, k)
 
         self.assertEqual(4, result)
+
+    def test_max_vowels_example45(self):
+        s = "tryhard"
+        k = 4
+
+        sol = Solution()
+        result = sol.maxVowels(s, k)
+
+        self.assertEqual(1, result)
