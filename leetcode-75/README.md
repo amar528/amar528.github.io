@@ -100,3 +100,9 @@ Use deque as queue for BFS. mark visited as +
 Logic for is valid step, boundaries, wall, entrance
 Enqueue count, next valid steps once visited
 685ms beats 40%/64%
+
+## Hashmap / Set
+
+### 2215 Find the Difference of 2 Arrays
+Using set() and difference() between the 2
+127ms beats 98%/24%
