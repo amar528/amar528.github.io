@@ -93,6 +93,13 @@ If key is not in all_keys for that room, exit
 Base cases to exit are if room number is >=n or if the room is already visited
 54ms beats 98%/22%
 
+### 547 - Number of Provinces
+keep a region count and visited set. let n be the length of the n * n matrix
+iterate city in range n, if city has not been visited, increment the region count and run dfs on the city.
+inside dfs, add the city to the visited set. iterate each neighbour in range n, if there is a connection 
+at provinces[city][neighbour] == 1 AND the neighbour has not been visited, then call dfs on the neighbour
+finally return the region/province count
+
 ### BFS
 
 ### 1926 - Nearest Exit from Maze Entrance
