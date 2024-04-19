@@ -115,6 +115,11 @@ Enqueue count, next valid steps once visited
 Using set() and difference() between the 2
 127ms beats 98%/24%
 
+### 1207 Unique Number of Occurrences
+Use collections.Counter.
+Init a set() Iterate over values() and check if count exists in set. False if so. True once iteration finishes.
+45ms beats 30%/7%
+
 ## Linked List
 
 ### 2095 - Delete the Middle Node of a Linked List
