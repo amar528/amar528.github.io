@@ -55,8 +55,8 @@ move l = mid + 1
 ### DFS
 
 ### 104 Max Depth
-Base case of root is None return 0.
-Return 1 + max of (recurse node.left + recurse node.right)
+Base case if root is None return 0.
+Return 1 + max of (recurse node.left , recurse node.right)
 35 ms beats 86%/10%
 
 ### BFS
@@ -93,6 +93,14 @@ If key is not in all_keys for that room, exit
 Base cases to exit are if room number is >=n or if the room is already visited
 54ms beats 98%/22%
 
+### 547 - Number of Provinces
+keep a region count and visited set. let n be the length of the n * n matrix
+iterate city in range n, if city has not been visited, increment the region count and run dfs on the city.
+inside dfs, add the city to the visited set. iterate each neighbour in range n, if there is a connection 
+at provinces[city][neighbour] == 1 AND the neighbour has not been visited, then call dfs on the neighbour
+finally return the region/province count
+175 ms beats 92%/18%
+
 ### BFS
 
 ### 1926 - Nearest Exit from Maze Entrance
@@ -100,3 +108,18 @@ Use deque as queue for BFS. mark visited as +
 Logic for is valid step, boundaries, wall, entrance
 Enqueue count, next valid steps once visited
 685ms beats 40%/64%
+
+## Hashmap / Set
+
+### 2215 Find the Difference of 2 Arrays
+Using set() and difference() between the 2
+127ms beats 98%/24%
+
+## Linked List
+
+### 2095 - Delete the Middle Node of a Linked List
+Create dummy node that points to head
+Use Fast/Slow pointer - slow goes next, fast next.next
+Once fast reaches end, set slow.next = slow.next.next
+return dummy.next
+576ms beats 92%/64%
