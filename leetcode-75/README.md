@@ -110,6 +110,8 @@ Using set() and difference() between the 2
 ## Linked List
 
 ### 2095 - Delete the Middle Node of a Linked List
+Create dummy node that points to head
 Use Fast/Slow pointer - slow goes next, fast next.next
 Once fast reaches end, set slow.next = slow.next.next
-605ms beats 59%/30%
+return dummy.next
+576ms beats 92%/64%
