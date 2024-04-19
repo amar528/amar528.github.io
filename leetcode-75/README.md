@@ -106,3 +106,10 @@ Enqueue count, next valid steps once visited
 ### 2215 Find the Difference of 2 Arrays
 Using set() and difference() between the 2
 127ms beats 98%/24%
+
+## Linked List
+
+### 2095 - Delete the Middle Node of a Linked List
+Use Fast/Slow pointer - slow goes next, fast next.next
+Once fast reaches end, set slow.next = slow.next.next
+605ms beats 59%/30%
