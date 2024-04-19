@@ -99,6 +99,7 @@ iterate city in range n, if city has not been visited, increment the region coun
 inside dfs, add the city to the visited set. iterate each neighbour in range n, if there is a connection 
 at provinces[city][neighbour] == 1 AND the neighbour has not been visited, then call dfs on the neighbour
 finally return the region/province count
+175 ms beats 92%/18%
 
 ### BFS
 
