@@ -55,8 +55,8 @@ move l = mid + 1
 ### DFS
 
 ### 104 Max Depth
-Base case of root is None return 0.
-Return 1 + max of (recurse node.left + recurse node.right)
+Base case if root is None return 0.
+Return 1 + max of (recurse node.left , recurse node.right)
 35 ms beats 86%/10%
 
 ### BFS
