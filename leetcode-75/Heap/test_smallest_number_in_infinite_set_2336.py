@@ -29,3 +29,30 @@ class TestSmallestInfiniteSet(TestCase):
 
         v = under_test.popSmallest()  # return 5, and remove it from the set.
         self.assertEqual(5, v)
+
+    def test_example2(self):
+        under_test = SmallestInfiniteSet()
+
+        v = under_test.popSmallest()
+        self.assertEqual(1, v)
+
+        under_test.addBack(1)
+
+        v = under_test.popSmallest()
+        self.assertEqual(1, v)
+
+        v = under_test.popSmallest()
+        self.assertEqual(2, v)
+
+        v = under_test.popSmallest()
+        self.assertEqual(3, v)
+
+        under_test.addBack(2)
+
+        under_test.addBack(3)
+
+        v = under_test.popSmallest()
+        self.assertEqual(2, v)
+
+        v = under_test.popSmallest()
+        self.assertEqual(3, v)
