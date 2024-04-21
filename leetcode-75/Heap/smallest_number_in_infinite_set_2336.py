@@ -15,4 +15,5 @@ class SmallestInfiniteSet:
         return val
 
     def addBack(self, num: int) -> None:
-        heapq.heappush(self.heap, num)
+        if num not in self.heap:
+            heapq.heappush(self.heap, num)
