@@ -76,6 +76,12 @@ Using heaps - create negative elements list - heapify it and heap pop k times
 Return the last popped val
 617ms beats 22%/85%
 
+### 2336 Smallest Number in an Infinite Set
+Use heapq and keep sequence, init to 1, on heap.
+when popping smallest, if heap is not empty, pop and return. otherwise, return sequence + 1
+when adding back, if number not currently in heap, and it is less than sequence, add it back
+87ms beats 86%/47%
+
 ## Prefix Sum
 
 ### 1732 - Find Highest Altitude
@@ -114,6 +120,11 @@ Enqueue count, next valid steps once visited
 ### 2215 Find the Difference of 2 Arrays
 Using set() and difference() between the 2
 127ms beats 98%/24%
+
+### 1207 Unique Number of Occurrences
+Use collections.Counter.
+Init a set() Iterate over values() and check if count exists in set. False if so. True once iteration finishes.
+45ms beats 30%/7%
 
 ## Linked List
 
