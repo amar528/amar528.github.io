@@ -105,7 +105,7 @@ iterate city in range n, if city has not been visited, increment the region coun
 inside dfs, add the city to the visited set. iterate each neighbour in range n, if there is a connection 
 at provinces[city][neighbour] == 1 AND the neighbour has not been visited, then call dfs on the neighbour
 finally return the region/province count
-175 ms beats 92%/18%
+174 ms beats 94%/8%
 
 ### 547 - Number of Provinces (Union Find)
 maintain parent[] and rank[]. index is the node number. value is parent and rank.
