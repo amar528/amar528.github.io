@@ -78,3 +78,23 @@ class TestSmallestInfiniteSet(TestCase):
 
         v = under_test.popSmallest()
         self.assertEqual(4, v)
+
+    def test_example4(self):
+        under_test = SmallestInfiniteSet()
+
+        v = under_test.popSmallest()
+        self.assertEqual(1, v)
+
+        under_test.addBack(608)
+
+        v = under_test.popSmallest()
+        self.assertEqual(2, v)
+
+        under_test.addBack(4)
+
+        v = under_test.popSmallest()
+        self.assertEqual(3, v)
+
+        under_test.addBack(384)
+        under_test.addBack(975)
+        under_test.addBack(692)
