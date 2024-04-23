@@ -35,12 +35,20 @@ Sliding window - get sum 0 - k.  Keep presum and postsum total until greater max
 Left and right window, create initial substring window and use Counter with map function to only return vowel counts. Sum these together.
 Then check l and r moving the window at end of the loop, -/+ max count so far
 102ms beats 86%/19%
+
 ## Stack
 
 ### 2390 - Remove Stars from String
 Using deque was slower. Also iterating with index of string was slower.
 Use simple list [] with append(char) and pop() return str join the stack (list)
 117ms beats 98%/62%
+
+### 735 - Asteroid Collision
+Use a stack [] iterate through the asteroids O(n) - for each a
+loop while a is moving left (<0) and top of stack[-1] is moving right (>0)
+this means a collision, so get the diff and handle each case, setting a to 0, or pop the stack
+if a is non zero at the end of the while loop, add it to the stack
+82ms beats 61%/68%
 
 ## Binary Search
 
