@@ -48,7 +48,7 @@ Use a stack [] iterate through the asteroids O(n) - for each a
 loop while a is moving left (<0) and top of stack[-1] is moving right (>0)
 this means a collision, so get the diff and handle each case, setting a to 0, or pop the stack
 if a is non zero at the end of the while loop, add it to the stack
-82ms beats 61%/68%
+71ms beats 97%/24%
 
 ## Binary Search
 
