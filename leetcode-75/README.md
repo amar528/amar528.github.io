@@ -15,7 +15,7 @@ set val at i to 1, decrement count. at end of each loop check if count has reach
 ## Two Pointers
 
 ### 283 - Move Zeros
-Use I, J. I is main O(n) loop. Only increment J if it is a zero, use pop and append
+Use i, j. i is main O(n) loop. Only increment j if it is a zero, use pop and append
 130ms beats 45%/78%
 
 ### 11 - Container With Most Water
