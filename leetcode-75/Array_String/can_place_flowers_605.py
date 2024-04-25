@@ -7,35 +7,41 @@ class Solution:
         if n == 0:
             return True
 
-        l = len(flowerbed)
+        length = len(flowerbed)
 
-        if l == 1:
+        # 1 empty space
+        if length == 1:
             return n == 1 and flowerbed[0] == 0
 
+        # the flowers to plant count
         count = n
 
-        for i in range(l):
+        # O(n)
+        for i in range(length):
 
-            prev = i - 1
-            after = i + 1
-
+            # keep track of left and right
+            left = i - 1
+            right = i + 1
             val = flowerbed[i]
 
-            # start
-            if i == 0 and val == 0 and flowerbed[i + 1] == 0:
+            # empty start plot, right is also empty
+            if i == 0 and val == 0 and flowerbed[right] == 0:
                 flowerbed[i] = 1
                 count -= 1
 
-            # end
-            elif i == len(flowerbed) - 1 and val == 0 and flowerbed[i - 1] == 0:
+            # empty end plot, left is also empty
+            elif i == len(flowerbed) - 1 and val == 0 and flowerbed[left] == 0:
                 flowerbed[i] = 1
                 count -= 1
 
-            elif val == 0 and prev >= 0 and after <= len(flowerbed) - 1:
-                if flowerbed[prev] == 0 and flowerbed[after] == 0:
-                    flowerbed[i] = 1
-                    count -= 1
+            # empty plot, we have plots to the left and right (within bounds)
+            # and they are both also empty
+            elif (val == 0 and left >= 0 and right <= len(flowerbed) - 1
+                  and flowerbed[left] == 0 and flowerbed[right] == 0):
+                flowerbed[i] = 1
+                count -= 1
 
+            # exit early if we have planted all flowers
             if count == 0:
                 return True
 
