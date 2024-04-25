@@ -7,7 +7,7 @@ https://leetcode.com/studyplan/leetcode-75/
 ### 1768 - Merge Strings Alternatively
 Init result list to combined size, use while chars left with len1, len2 and i,j with str.join() result - 30ms beats 88%/93%
 
-### 605 Can Place Flowers
+### 605 - Can Place Flowers
 base cases for n = 0, 1. iterate and check for i == start, end conditions, else check previous and next.
 set val at i to 1, decrement count. at end of each loop check if count has reached zero
 135ms beats 35%/34%
@@ -15,7 +15,7 @@ set val at i to 1, decrement count. at end of each loop check if count has reach
 ## Two Pointers
 
 ### 283 - Move Zeros
-Use I, J. I is main O(n) loop. Only increment J if it is a zero, use pop and append
+Use i, j. i is main O(n) loop. Only increment j if it is a zero, use pop and append
 130ms beats 45%/78%
 
 ### 11 - Container With Most Water
@@ -62,7 +62,7 @@ move l = mid + 1
 
 ### DFS
 
-### 104 Max Depth
+### 104 - Max Depth
 Base case if root is None return 0.
 Return 1 + max of (recurse node.left , recurse node.right)
 35 ms beats 86%/10%
@@ -84,7 +84,7 @@ Using heaps - create negative elements list - heapify it and heap pop k times
 Return the last popped val
 617ms beats 22%/85%
 
-### 2336 Smallest Number in an Infinite Set
+### 2336 - Smallest Number in an Infinite Set
 Use heapq and keep sequence, init to 1, on heap.
 when popping smallest, if heap is not empty, pop and return. otherwise, return sequence + 1
 when adding back, if number not currently in heap, and it is less than sequence, add it back
@@ -95,6 +95,12 @@ when adding back, if number not currently in heap, and it is less than sequence,
 ### 1732 - Find Highest Altitude
 Sum previous += current.  Keep track of max() which is initialised at 0, which is the starting point.
 38 ms beats 58%/43%
+
+### 724 - Find Pivot Index
+get sum(nums). iterate thru nums, prefix sum += current nums[i]
+postfix sum is total - prefix sum - nums[i]
+if pre and postfix sums equal, return i
+121ms beats 68%/67%
 
 ## Graphs
 
@@ -131,13 +137,22 @@ Logic for is valid step, boundaries, wall, entrance
 Enqueue count, next valid steps once visited
 685ms beats 40%/64%
 
+### 994 - Rotting Oranges
+get all rotten oranges, enqueue them. also keep track of all fresh oranges in a set.
+using BFS, empty the queue, mark each as rotten. remove from fresh oranges set, keep track of each cell
+so we can enqueue its neighbours if that neighbouring cell is a fresh orange
+at each queue emptying, this represents 1 BFS level, so increment the minutes / count
+if at the end there are still fresh oranges remaining, we return -1, otherwise the minute count
+44 ms beats 88%/65%
+
+
 ## Hashmap / Set
 
-### 2215 Find the Difference of 2 Arrays
+### 2215 - Find the Difference of 2 Arrays
 Using set() and difference() between the 2
 127ms beats 98%/24%
 
-### 1207 Unique Number of Occurrences
+### 1207 - Unique Number of Occurrences
 Use collections.Counter.
 Init a set() Iterate over values() and check if count exists in set. False if so. True once iteration finishes.
 45ms beats 30%/7%

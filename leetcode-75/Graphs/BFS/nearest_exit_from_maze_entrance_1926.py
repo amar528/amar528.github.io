@@ -68,23 +68,19 @@ class Solution:
         while queue:
             step_count, step = queue.popleft()
 
-            # check visited steps
+            # check visited steps / wall
             if maze[step[0]][step[1]] == '+':
                 continue
 
             step_count += 1
-            # print(f'visiting {step} count {step_count}')
 
             if self.is_exit(step, maze, entrance):
-                # print(f'exit found, step count {step_count}')
                 return step_count
 
             # mark as visited
             maze[step[0]][step[1]] = '+'
 
             for next_step in self.get_next_steps(step, maze):
-                # print(f'enqueuing {next_step}')
                 queue.append((step_count, next_step))
 
-        # print('no route found')
         return -1
