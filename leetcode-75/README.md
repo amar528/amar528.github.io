@@ -137,6 +137,15 @@ Logic for is valid step, boundaries, wall, entrance
 Enqueue count, next valid steps once visited
 685ms beats 40%/64%
 
+### 994 - Rotting Oranges
+get all rotten oranges, enqueue them. also keep track of all fresh oranges in a set.
+using BFS, empty the queue, mark each as rotten. remove from fresh oranges set, keep track of each cell
+so we can enqueue its neighbours if that neighbouring cell is a fresh orange
+at each queue emptying, this represents 1 BFS level, so increment the minutes / count
+if at the end there are still fresh oranges remaining, we return -1, otherwise the minute count
+44 ms beats 88%/65%
+
+
 ## Hashmap / Set
 
 ### 2215 - Find the Difference of 2 Arrays
