@@ -4,6 +4,7 @@ class Solution:
         len1 = len(word1)
         len2 = len(word2)
 
+        # empty result of combined length
         result = ['' * (len1 + len2)]
 
         i = j = 0
