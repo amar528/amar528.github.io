@@ -20,6 +20,12 @@ set val at i to 1, decrement count. at end of each loop check if count has reach
 calculate GCD of both string lengths. check each string can be wholly divided by the prefix of length GCD
 41ms beats 30%/26%
 
+### 1431 - Kids with the Greatest Number of Candies
+get max() of candies. for each i, kid in candies check if kid + extra_candies is >= to the max.
+set result[i] to True if so
+35ms beats 85%/91%
+
+
 ## Binary Search
 
 ### 374 - Guess Number Higher or Lower
