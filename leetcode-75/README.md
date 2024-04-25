@@ -16,6 +16,9 @@ base cases for n = 0, 1. iterate and check for i == start, end conditions, else 
 set val at i to 1, decrement count. at end of each loop check if count has reached zero
 135ms beats 35%/34%
 
+### 1071 - GCD of Strings
+calculate GCD of both string lengths. check each string can be wholly divided by the prefix of length GCD
+41ms beats 30%/26%
 
 ## Binary Search
 
