@@ -163,6 +163,16 @@ if pre and postfix sums equal, return i
 121ms beats 68%/67%
 
 
+## Queue
+
+### 933 - Number of Recent Calls
+Use a deque to maintain queue of requests.
+each time a ping is added, while head q[0] is < (t - 3000) popleft()
+this removes any older elements that exceed the threshold
+return the new length of the queue
+187ms beats 82%/42%
+
+
 ## Sliding Window
 
 ### 643 - Maximum Average Subarray
