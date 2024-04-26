@@ -12,3 +12,11 @@ class TestSolution(TestCase):
 
         sol = Solution()
         result = sol.searchBST(root, 2)
+
+        self.assertIsNotNone(result)
+        self.assertEqual(2, result.val)
+
+        self.assertIsNotNone(result.left)
+        self.assertEqual(1, result.left.val)
+        self.assertIsNotNone(result.right)
+        self.assertEqual(3, result.right.val)

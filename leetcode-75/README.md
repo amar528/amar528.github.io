@@ -58,6 +58,14 @@ Return max of dict with key=dict.get to return the key with max value
 164ms beats 39%/66%
 
 
+## Binary Search Tree
+
+### 700 - Search in a BST
+base case of root equal to None. base case of root.val matching search val.
+otherwise, if val is smaller and we have a left subtree, recurse left,
+or if val is greater and we have a right subtree, recurse right.
+53ms beats 72%/84%
+
 ## Graphs
 
 ### DFS
