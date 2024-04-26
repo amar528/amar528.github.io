@@ -26,6 +26,15 @@ set result[i] to True if so
 35ms beats 85%/91%
 
 
+## Backtracking
+
+### 17 - Letter Combinations of a Phone Number
+map digits 2-9 to their corresponding characters, using a dict set up in __init__
+define backtrack(i, s) where i is digits[i] and s is the string we are building up
+base case when i has reached the len(digits) it means the string is complete, so we append to result list
+otherwise, we backtrack for each mapped char of digits[i], we concat s + c mapping, and i + 1
+27ms beats 94%/10%
+
 ## Binary Search
 
 ### 374 - Guess Number Higher or Lower
