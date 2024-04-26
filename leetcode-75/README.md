@@ -85,6 +85,14 @@ result is tribs[n]
 25ms beats 96%/82%
 
 
+## Binary Search Tree
+
+### 700 - Search in a BST
+base case of root equal to None. base case of root.val matching search val.
+otherwise, if val is smaller and we have a left subtree, recurse left,
+or if val is greater and we have a right subtree, recurse right.
+53ms beats 72%/84%
+
 ## Graphs
 
 ### DFS
@@ -194,6 +202,16 @@ each time a ping is added, while head q[0] is < (t - 3000) popleft()
 this removes any older elements that exceed the threshold
 return the new length of the queue
 187ms beats 82%/42%
+
+## Queue
+
+### 933 - Number of Recent Calls
+Use a deque to maintain queue of requests.
+each time a ping is added, while head q[0] is < (t - 3000) popleft()
+this removes any older elements that exceed the threshold
+return the new length of the queue
+187ms beats 82%/42%
+
 
 ## Sliding Window
 
