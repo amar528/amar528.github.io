@@ -2,7 +2,6 @@
 
 https://leetcode.com/studyplan/leetcode-75/
 
-
 ## Array/String
 
 ### 1768 - Merge Strings Alternatively
@@ -17,18 +16,20 @@ set val at i to 1, decrement count. at end of each loop check if count has reach
 135ms beats 35%/34%
 
 ### 1071 - GCD of Strings
+
 calculate GCD of both string lengths. check each string can be wholly divided by the prefix of length GCD
 41ms beats 30%/26%
 
 ### 1431 - Kids with the Greatest Number of Candies
+
 get max() of candies. for each i, kid in candies check if kid + extra_candies is >= to the max.
 set result[i] to True if so
 35ms beats 85%/91%
 
-
 ## Backtracking
 
 ### 17 - Letter Combinations of a Phone Number
+
 map digits 2-9 to their corresponding characters, using a dict set up in __init__
 define backtrack(i, s) where i is digits[i] and s is the string we are building up
 base case when i has reached the len(digits) it means the string is complete, so we append to result list
@@ -43,7 +44,6 @@ Find mid = l + (r - l) // 2 - use this to avoid integer overflow
 Start at range 1,n. Too high, move r = mid-1, too low,
 move l = mid + 1
 30 ms beats 83%/68%
-
 
 ## Binary Tree
 
@@ -66,14 +66,24 @@ Dequeue each node, add its sum to the dict
 Return max of dict with key=dict.get to return the key with max value
 164ms beats 39%/66%
 
-
 ## Binary Search Tree
 
 ### 700 - Search in a BST
+
 base case of root equal to None. base case of root.val matching search val.
 otherwise, if val is smaller and we have a left subtree, recurse left,
 or if val is greater and we have a right subtree, recurse right.
 53ms beats 72%/84%
+
+## DP - 1D
+
+### 1137 - nth Tribonacci Number
+
+initialise tribs as [0, 1, 1]
+for i in range 3, n + 1 (to include tribs[n]) calculate tribs[i] as sum(tribs[i-3], tribs[i-2], tribs[i-1])
+result is tribs[n]
+25ms beats 96%/82%
+
 
 ## Graphs
 
@@ -123,7 +133,6 @@ at each queue emptying, this represents 1 BFS level, so increment the minutes / 
 if at the end there are still fresh oranges remaining, we return -1, otherwise the minute count
 44 ms beats 88%/65%
 
-
 ## Hashmap / Set
 
 ### 2215 - Find the Difference of 2 Arrays
@@ -136,7 +145,6 @@ Using set() and difference() between the 2
 Use collections.Counter.
 Init a set() Iterate over values() and check if count exists in set. False if so. True once iteration finishes.
 45ms beats 30%/7%
-
 
 ## Heap
 
@@ -153,7 +161,6 @@ when popping smallest, if heap is not empty, pop and return. otherwise, return s
 when adding back, if number not currently in heap, and it is less than sequence, add it back
 87ms beats 86%/47%
 
-
 ## Linked List
 
 ### 2095 - Delete the Middle Node of a Linked List
@@ -163,7 +170,6 @@ Use Fast/Slow pointer - slow goes next, fast next.next
 Once fast reaches end, set slow.next = slow.next.next
 return dummy.next
 576ms beats 92%/64%
-
 
 ## Prefix Sum
 
@@ -179,16 +185,15 @@ postfix sum is total - prefix sum - nums[i]
 if pre and postfix sums equal, return i
 121ms beats 68%/67%
 
-
 ## Queue
 
 ### 933 - Number of Recent Calls
+
 Use a deque to maintain queue of requests.
 each time a ping is added, while head q[0] is < (t - 3000) popleft()
 this removes any older elements that exceed the threshold
 return the new length of the queue
 187ms beats 82%/42%
-
 
 ## Sliding Window
 
@@ -206,7 +211,6 @@ Sum these together.
 Then check l and r moving the window at end of the loop, -/+ max count so far
 102ms beats 86%/19%
 
-
 ## Stack
 
 ### 2390 - Remove Stars from String
@@ -222,7 +226,6 @@ loop while a is moving left (<0) and top of stack[-1] is moving right (>0)
 this means a collision, so get the diff and handle each case, setting a to 0, or pop the stack
 if a is non zero at the end of the while loop, add it to the stack
 71ms beats 97%/24%
-
 
 ## Two Pointers
 
