@@ -26,6 +26,15 @@ set result[i] to True if so
 35ms beats 85%/91%
 
 
+## Backtracking
+
+### 17 - Letter Combinations of a Phone Number
+map digits 2-9 to their corresponding characters, using a dict set up in __init__
+define backtrack(i, s) where i is digits[i] and s is the string we are building up
+base case when i has reached the len(digits) it means the string is complete, so we append to result list
+otherwise, we backtrack for each mapped char of digits[i], we concat s + c mapping, and i + 1
+27ms beats 94%/10%
+
 ## Binary Search
 
 ### 374 - Guess Number Higher or Lower
@@ -57,6 +66,14 @@ Dequeue each node, add its sum to the dict
 Return max of dict with key=dict.get to return the key with max value
 164ms beats 39%/66%
 
+
+## Binary Search Tree
+
+### 700 - Search in a BST
+base case of root equal to None. base case of root.val matching search val.
+otherwise, if val is smaller and we have a left subtree, recurse left,
+or if val is greater and we have a right subtree, recurse right.
+53ms beats 72%/84%
 
 ## Graphs
 
@@ -161,6 +178,16 @@ get sum(nums). iterate thru nums, prefix sum += current nums[i]
 postfix sum is total - prefix sum - nums[i]
 if pre and postfix sums equal, return i
 121ms beats 68%/67%
+
+
+## Queue
+
+### 933 - Number of Recent Calls
+Use a deque to maintain queue of requests.
+each time a ping is added, while head q[0] is < (t - 3000) popleft()
+this removes any older elements that exceed the threshold
+return the new length of the queue
+187ms beats 82%/42%
 
 
 ## Sliding Window
