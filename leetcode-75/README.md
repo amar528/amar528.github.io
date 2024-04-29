@@ -258,3 +258,9 @@ Use i, j. i is main O(n) loop. Only increment j if it is a zero, use pop and app
 Instead of full iteration, can move pointers conditionally.
 i.e. move left idx if left height is < right height, else move right idx
 528ms beats 50%/89%
+
+### 392 - Is Subsequence
+iterate through string to be checked (O(n)) keep another pointer for the target string, only
+incrementing when a match is found, also decrementing a count.  when the count reaches 0 at the
+end of an iteration, we can return True.  if we do not reach this point, then the result must be False
+32ms beats 79%/40%
