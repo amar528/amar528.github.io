@@ -21,8 +21,6 @@ class Solution:
         rows = len(grid)
         cols = len(grid[0])
 
-        minutes = -1  # start at -1
-
         queue = collections.deque()
         fresh_oranges = set()
 
@@ -41,26 +39,30 @@ class Solution:
         elif not queue and fresh_oranges:
             return -1
 
+        minutes = 0
+
         while queue:
 
-            to_add = []
+            level_count = len(queue)
+
             # empty the queue, this represents one level / minute
-            while len(queue) > 0:
+            for i in range(level_count):
+
                 r, c = queue.popleft()
-                to_add.append((r, c))
+
                 grid[r][c] = 2
+
                 if (r, c) in fresh_oranges:
                     fresh_oranges.remove((r, c))
 
-            minutes += 1
+                if not fresh_oranges:
+                    return minutes
 
-            # enqueue the neighbouring fresh oranges
-            for r, c in to_add:
+                # enqueue the neighbouring fresh oranges
                 for n_row, n_col in self.get_neighbours(r, c, rows, cols):
                     if grid[n_row][n_col] == 1:
                         queue.append((n_row, n_col))
 
-        if fresh_oranges:
-            return -1
+            minutes += 1
 
-        return minutes
+        return -1

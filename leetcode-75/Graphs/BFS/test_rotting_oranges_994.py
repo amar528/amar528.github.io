@@ -32,7 +32,10 @@ class TestSolution(TestCase):
         self.assertEqual(0, result)
 
     def test_oranges_rotting_example4(self):
-        grid = [[2, 2], [1, 1], [0, 0], [2, 0]]
+        grid = [[2, 2],
+                [1, 1],
+                [0, 0],
+                [2, 0]]
 
         sol = Solution()
         result = sol.orangesRotting(grid)
