@@ -10,18 +10,22 @@ class Solution:
 
         def dfs(city):
 
+            if city in visited:
+                return False
+
             # add to visited inside the recursion
             visited.add(city)
 
             for neighbour in range(n):
                 # if we have a connection and it has not been visited
-                if provinces[city][neighbour] == 1 and neighbour not in visited:
+                if provinces[city][neighbour] == 1:
                     dfs(neighbour)
 
         for city in range(n):
 
             if city not in visited:
-                # we found a new province
+                # we haven't seen this city before
+                # so we found a new province / set of components
                 # increment the region count
                 # visit the city and its neighbours
                 regions += 1
