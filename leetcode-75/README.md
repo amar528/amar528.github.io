@@ -123,6 +123,14 @@ we iterate through each city/neighbour n/n and for each connection, we attempt a
 and decrement this from the nodes count.
 191ms beats 33%/45%
 
+### 972 - Leaf Similar Trees
+
+define recursive dfs() with base case of None/null return [], and case when node is a leaf - return [val]
+add the left and right subtrees recursively, returning the joint arrays.
+call dfs for both root nodes, and compare the resulting leaf arrays
+40ms beats 27%/94%
+
+
 ### BFS
 
 ### 1926 - Nearest Exit from Maze Entrance
