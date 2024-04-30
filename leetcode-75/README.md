@@ -46,7 +46,14 @@ move l = mid + 1
 30 ms beats 83%/68%
 
 ### 2300 - Pairs of Spells and Potions
-for each spell s, 
+sort the potions list. for each spell s, partition potions array with left, right, mid.  
+for each potion while left <= right, if >= success threshold,
+store this leftmost pointer index, then we attempt smaller values with right = mid - 1.  
+if the threshold is not met, we attempt greater values with left = mid + 1
+the leftmost index is initially set to m (potion count). the result is m - leftmost idx,
+which gives us the count of potions that are >= the success threshold.
+1196ms beats 58%/93%
+
 
 ## Binary Tree
 
