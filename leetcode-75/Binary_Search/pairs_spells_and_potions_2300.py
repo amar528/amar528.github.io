@@ -15,20 +15,20 @@ class Solution:
 
             left = 0
             right = m - 1
-            idx = m
+            leftmost_idx = m
 
             while left <= right:
                 mid = (left + right) // 2
 
                 if spell * potions[mid] >= success:
-                    idx = mid
+                    leftmost_idx = mid
                     # now try smaller
                     right = mid - 1
                 else:
                     # too small
                     left = mid + 1
-                    
-            successful_potions = m - idx
+
+            successful_potions = m - leftmost_idx
             result.append(successful_potions)
 
         return result

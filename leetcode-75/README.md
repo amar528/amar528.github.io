@@ -45,6 +45,9 @@ Start at range 1,n. Too high, move r = mid-1, too low,
 move l = mid + 1
 30 ms beats 83%/68%
 
+### 2300 - Pairs of Spells and Potions
+for each spell s, 
+
 ## Binary Tree
 
 ### DFS
