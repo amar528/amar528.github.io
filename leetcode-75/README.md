@@ -45,6 +45,16 @@ Start at range 1,n. Too high, move r = mid-1, too low,
 move l = mid + 1
 30 ms beats 83%/68%
 
+### 2300 - Pairs of Spells and Potions
+
+sort the potions list. for each spell s, partition potions array with left, right, mid.  
+for each potion while left <= right, if >= success threshold,
+store this leftmost pointer index, then we attempt smaller values with right = mid - 1.  
+if the threshold is not met, we attempt greater values with left = mid + 1
+the leftmost index is initially set to m (potion count). the result is m - leftmost idx,
+which gives us the count of potions that are >= the success threshold.
+1196ms beats 58%/93%
+
 ## Binary Tree
 
 ### DFS
@@ -85,9 +95,26 @@ result is tribs[n]
 25ms beats 96%/82%
 
 
+## DP - nD
+
+### 62 - Unique Paths
+
+Using dp, we can calculate each 'current' row in reverse order, given the previous row.
+The bottom row will only ever contain 1's (same as the rightmost column) as there is only always
+one move to make (we can only move right, or down in these cases).
+Working in reverse order, we calculate the current cell value to be the sum of the cells that are to
+the right, and down. i.e. current_row[j] = current_row[j + 1] + previous_row[j]
+we iterate not only in reverse order, but also starting at n - 2 as we know the rightmost column will
+always be 1.
+For each row in range m - 1, calculate the current row, update the previous row to the current one.
+Finally we can return the value at current_row[0] as it will contain all the possible ways to reach
+the bottom right cell.
+32ms beats 79%/41%
+
 ## Binary Search Tree
 
 ### 700 - Search in a BST
+
 base case of root equal to None. base case of root.val matching search val.
 otherwise, if val is smaller and we have a left subtree, recurse left,
 or if val is greater and we have a right subtree, recurse right.
@@ -129,7 +156,6 @@ define recursive dfs() with base case of None/null return [], and case when node
 add the left and right subtrees recursively, returning the joint arrays.
 call dfs for both root nodes, and compare the resulting leaf arrays
 40ms beats 27%/94%
-
 
 ### BFS
 
@@ -214,12 +240,12 @@ return the new length of the queue
 ## Queue
 
 ### 933 - Number of Recent Calls
+
 Use a deque to maintain queue of requests.
 each time a ping is added, while head q[0] is < (t - 3000) popleft()
 this removes any older elements that exceed the threshold
 return the new length of the queue
 187ms beats 82%/42%
-
 
 ## Sliding Window
 
@@ -268,7 +294,8 @@ i.e. move left idx if left height is < right height, else move right idx
 528ms beats 50%/89%
 
 ### 392 - Is Subsequence
+
 iterate through string to be checked (O(n)) keep another pointer for the target string, only
-incrementing when a match is found, also decrementing a count.  when the count reaches 0 at the
-end of an iteration, we can return True.  if we do not reach this point, then the result must be False
+incrementing when a match is found, also decrementing a count. when the count reaches 0 at the
+end of an iteration, we can return True. if we do not reach this point, then the result must be False
 32ms beats 79%/40%
