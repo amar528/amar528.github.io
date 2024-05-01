@@ -36,6 +36,15 @@ base case when i has reached the len(digits) it means the string is complete, so
 otherwise, we backtrack for each mapped char of digits[i], we concat s + c mapping, and i + 1
 27ms beats 94%/10%
 
+### 216 - Combination Sum 3
+define backtrack function as current_combination, total, starting_number.
+we start the backtracking with [], 0, 1
+base case is reached when the len() of the combination reaches k.
+if we have reached the target sum, then append the result to the outer result list.
+for each remaining digit, we recurse with a copy of the combination list (with new number added),
+the updated total, and the next starting digit.
+32ms beats 80%/79%
+
 ## Binary Search
 
 ### 374 - Guess Number Higher or Lower
