@@ -3,7 +3,7 @@ from typing import List
 
 class Solution:
     def combinationSum3(self, k: int, n: int) -> List[List[int]]:
-        ans = []
+        result = []
 
         def backtrack(current, total, start):
 
@@ -12,7 +12,7 @@ class Solution:
 
                 # append result if successfully reached the target
                 if total == n:
-                    ans.append(current.copy())
+                    result.append(current.copy())
                 return
 
             # for the remaining digits
@@ -27,4 +27,4 @@ class Solution:
         # start backtracking, empty current and start at 1
         backtrack([], 0, 1)
 
-        return ans
+        return result
