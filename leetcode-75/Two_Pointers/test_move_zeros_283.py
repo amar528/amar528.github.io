@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from move_zeros_283 import Solution
+from move_zeros_2p_283 import Solution
 
 
 class TestSolution(TestCase):

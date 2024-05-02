@@ -292,8 +292,10 @@ if a is non zero at the end of the while loop, add it to the stack
 
 ### 283 - Move Zeros
 
-Use i, j. i is main O(n) loop. Only increment j if it is a zero, use pop and append
-130ms beats 45%/78%
+use 2 pointer approach. iterate through list with i, also maintain an index that points to
+the last non-zero element (initially at index 0).  for each i value, if it is non zero, 
+swap current and last non-zero positions and increment the non-zero index.
+120 ms beats 86%/78%
 
 ### 11 - Container With Most Water
 
