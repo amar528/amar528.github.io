@@ -87,6 +87,11 @@ Return max of dict with key=dict.get to return the key with max value
 
 ### 199 - Right Side View
 we use a deque as a queue, append to end and popleft() to dequeue.
+while the queue has elements, we empty it for every iteration, processing all nodes at the current level,
+from left to right.  for each node popped from the queue, we append its left and right children, and
+set a right-most pointer to the node.  at the end of each emptying of the queue/level, we have a pointer
+to the right most.  so if it is valid, we can obtain its value.
+27ms beats 97%/8%
 
 
 ## Binary Search Tree
