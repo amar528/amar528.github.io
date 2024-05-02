@@ -302,7 +302,7 @@ swap current and last non-zero positions and increment the non-zero index.
 2 pointer approach left, right with max so far.
 Instead of full iteration, can move pointers conditionally.
 i.e. move left idx if left height is < right height, else move right idx
-528ms beats 50%/89%
+514ms beats 77%/95%
 
 ### 392 - Is Subsequence
 
