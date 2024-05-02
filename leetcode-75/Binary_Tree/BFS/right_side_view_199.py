@@ -18,7 +18,7 @@ class Solution:
             right_most = None
 
             # process all nodes at this level
-            for i in range(len(q)):
+            for _ in range(len(q)):
                 current = q.popleft()
 
                 if current:

@@ -85,6 +85,10 @@ Dequeue each node, add its sum to the dict
 Return max of dict with key=dict.get to return the key with max value
 164ms beats 39%/66%
 
+### 199 - Right Side View
+we use a deque as a queue, append to end and popleft() to dequeue.
+
+
 ## Binary Search Tree
 
 ### 700 - Search in a BST
