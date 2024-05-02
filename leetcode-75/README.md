@@ -299,8 +299,10 @@ swap current and last non-zero positions and increment the non-zero index.
 
 ### 11 - Container With Most Water
 
-2 pointer approach left, right with max so far.
-Instead of full iteration, can move pointers conditionally.
+2 pointer approach left (0), right (n - 1) with max volume found so far (0).
+while left < right, we calculate the volume based on distance and the min() of 
+the left and right heights. conditionally update the max found so far.
+we only move the pointer which has the smallest height
 i.e. move left idx if left height is < right height, else move right idx
 514ms beats 77%/95%
 
