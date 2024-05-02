@@ -260,10 +260,11 @@ return the new length of the queue
 
 ### 643 - Maximum Average Subarray
 
-Initial try brute force While loop with max so far sliding window times out - O(n * k)
-Sliding window - get sum 0 - k. Keep presum and postsum total until greater max is found. Remember to reset the pre/post
-sum totals
-900ms beats 41%/97%
+Sliding window - get initial window sum 0 - k. 
+Keep pre_sum and post_sum total until greater max is found. 
+Remember to reset the pre/post sum totals if we find a greater value
+shift left and right pointers of the window by 1
+848ms beats 96%/99%
 
 ### 1456 - Max Num of Vowels in Given Substring Length
 
