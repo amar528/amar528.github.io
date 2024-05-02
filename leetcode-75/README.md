@@ -268,8 +268,8 @@ shift left and right pointers of the window by 1
 
 ### 1456 - Max Num of Vowels in Given Substring Length
 
-Left and right window, create initial substring window and use Counter with map function to only return vowel counts.
-Sum these together.
+Left and right window, create initial substring window and use Counter with map function to only return 
+vowel counts.
 Then check l and r moving the window at end of the loop, -/+ max count so far
 102ms beats 86%/19%
 
