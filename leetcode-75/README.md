@@ -26,6 +26,15 @@ get max() of candies. for each i, kid in candies check if kid + extra_candies is
 set result[i] to True if so
 35ms beats 85%/91%
 
+### 1657 - Determine if 2 Strings are Close
+for operation 1, we can say that they must have the same set of characters. so test this by
+checking that set(word1) == set(word2)
+
+for operation 2, we can say that the frequencies of each character should relate, so we can
+use a Counter to map the character frequency, and then convert to a sorted list. if both lists match,
+then it is possible to swap the characters so the strings match.
+122ms beats 89%/96%
+
 ## Backtracking
 
 ### 17 - Letter Combinations of a Phone Number
