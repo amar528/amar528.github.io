@@ -64,6 +64,17 @@ the leftmost index is initially set to m (potion count). the result is m - leftm
 which gives us the count of potions that are >= the success threshold.
 1196ms beats 58%/93%
 
+### 162 - Find Peak Element
+use binary search without sorting the array.  use l, r, mid as per usual, while l <= r.
+if the value to the left of mid is higher, then we search there by moving the right 
+pointer to mid - 1. if the value to the right of mid is greater, then 
+we search the right side by setting left to mid + 1.
+otherwise we can return mid, which is a peak.
+we also need to perform bounds check as the peak could be at index 0, or n - 1.
+in this case, when moving to the left we also need to check that mid is > 0.
+likewise, if moving to the right, we need to check that mid is < n - 1
+41ms beats 87%/37%
+
 ## Binary Tree
 
 ### DFS
