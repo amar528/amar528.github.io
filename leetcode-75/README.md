@@ -260,15 +260,16 @@ return the new length of the queue
 
 ### 643 - Maximum Average Subarray
 
-Initial try brute force While loop with max so far sliding window times out - O(n * k)
-Sliding window - get sum 0 - k. Keep presum and postsum total until greater max is found. Remember to reset the pre/post
-sum totals
-900ms beats 41%/97%
+Sliding window - get initial window sum 0 - k. 
+Keep pre_sum and post_sum total until greater max is found. 
+Remember to reset the pre/post sum totals if we find a greater value
+shift left and right pointers of the window by 1
+848ms beats 96%/99%
 
 ### 1456 - Max Num of Vowels in Given Substring Length
 
-Left and right window, create initial substring window and use Counter with map function to only return vowel counts.
-Sum these together.
+Left and right window, create initial substring window and use Counter with map function to only return 
+vowel counts.
 Then check l and r moving the window at end of the loop, -/+ max count so far
 102ms beats 86%/19%
 
@@ -299,10 +300,12 @@ swap current and last non-zero positions and increment the non-zero index.
 
 ### 11 - Container With Most Water
 
-2 pointer approach left, right with max so far.
-Instead of full iteration, can move pointers conditionally.
+2 pointer approach left (0), right (n - 1) with max volume found so far (0).
+while left < right, we calculate the volume based on distance and the min() of 
+the left and right heights. conditionally update the max found so far.
+we only move the pointer which has the smallest height
 i.e. move left idx if left height is < right height, else move right idx
-528ms beats 50%/89%
+514ms beats 77%/95%
 
 ### 392 - Is Subsequence
 

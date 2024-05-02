@@ -6,15 +6,19 @@ class Solution:
         vowels = {'a', 'e', 'i', 'o', 'u'}
 
         n = len(s)
+
         left = 0
         right = left + k
 
+        # our window substring
         sub_string = s[left:right]
+
+        # count the char occurrences
         counter = Counter(sub_string)
+
+        # map to vowels only
         max_so_far = sum(map(lambda item: item[1] if item[0] in vowels else 0, counter.items()))
 
-        # left += 1
-        # right += 1
         max_count = max_so_far
 
         while right < n:
