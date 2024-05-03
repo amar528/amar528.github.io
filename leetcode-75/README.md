@@ -152,6 +152,13 @@ for i in range 3, n + 1 (to include tribs[n]) calculate tribs[i] as sum(tribs[i-
 result is tribs[n]
 25ms beats 96%/82%
 
+### Min Cost of Climbing Stairs
+use a dp list of length n + 2.  set the cost of the out of bounds steps to 0.
+now we go backwards from the first step, and calculate the cost of this step as
+the ith cost, plus the minimum of the 2 steps above it, from the dp list.
+the answer is the minimum of the 0, 1 steps
+51ms beats 79%/22%
+
 
 ## DP - nD
 
