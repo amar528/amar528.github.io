@@ -35,6 +35,9 @@ use a Counter to map the character frequency, and then convert to a sorted list.
 then it is possible to swap the characters so the strings match.
 122ms beats 89%/96%
 
+### 443 - String Compression
+
+
 ## Backtracking
 
 ### 17 - Letter Combinations of a Phone Number

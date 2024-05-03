@@ -18,21 +18,17 @@ class Solution:
                 count += 1
                 end += 1
 
-            if 1 < count < 10:
+            if count > 1:
 
-                chars[start + 1] = str(count)
-                del chars[start + 2:end]
-                end -= (end - (start + 2))
-
-            elif 1 < count >= 10:
                 digits = 0
                 count_chars = str(count)
+
                 for c in count_chars:
                     digits += 1
                     chars[start + digits] = c
 
                 del chars[start + digits + 1:end]
-                end -= (end - (start + digits))
+                end -= (end - (start + digits + 1))
 
             start = end
 
