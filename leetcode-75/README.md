@@ -35,6 +35,15 @@ use a Counter to map the character frequency, and then convert to a sorted list.
 then it is possible to swap the characters so the strings match.
 122ms beats 89%/96%
 
+### 443 - String Compression
+iterate through the string from a given start position (0) and find the ending index of the current
+sequence (while the char remains the same), obtaining the count of the number of characters that are repeating.
+if we have a count greater than 1, append each digit (per division of 10).
+delete the remaining chars up to the end position.
+update the new end position, given the resizing.
+finally update the start position to the previous ending one.
+52ms beats 85%/30%
+
 ## Backtracking
 
 ### 17 - Letter Combinations of a Phone Number
