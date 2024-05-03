@@ -99,9 +99,20 @@ likewise, if moving to the right, we need to check that mid is < n - 1
 
 ### 104 - Max Depth
 
-Base case if root is None return 0.
+recursive DFS = base case if root is None return 0.
 Return 1 + max of (recurse node.left , recurse node.right)
 35 ms beats 86%/10%
+
+### 1448 - Count Good Nodes
+
+DFS using recursion - base case return 0 if node is null.
+Use Pre Order traversal (process current node value before recursing).
+dfs helper method takes current, max_in_path.
+we start recursion with root, root.val as the max so far.
+for each pre order traversal, compare if the val at this node is <= max so far,
+we add 1 to the total count if so, else 0.
+we add this current node value to the recursive calls for .left and .right
+116ms beats 93%/27%
 
 ### BFS
 
