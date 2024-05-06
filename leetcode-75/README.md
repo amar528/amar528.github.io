@@ -302,6 +302,15 @@ this removes any older elements that exceed the threshold
 return the new length of the queue
 187ms beats 82%/42%
 
+### 649 - Dota2Senate
+Use 2 queues, one for each 'team'.  Enqueue the associated index of each element in the
+senate string, so we retain the ordering.
+whilst both queues have elements, pop left (dequeue).
+the smallest element has priority, so it is appended to the back of its queue, plus n,
+the total number of senators.
+One queue will be emptied first, the queue which still has remaining senators wins.
+50ms beats 64%/48%
+
 ## Queue
 
 ### 933 - Number of Recent Calls
