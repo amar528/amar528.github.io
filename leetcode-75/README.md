@@ -143,6 +143,20 @@ otherwise, if val is smaller and we have a left subtree, recurse left,
 or if val is greater and we have a right subtree, recurse right.
 53ms beats 72%/84%
 
+## Bit Manipulation
+
+### 338 - Counting Bits
+initialise a result array of size n + 1
+iterate from 0 to n, inclusive as val.
+for this val, shift right and use this as the index
+also bitwise and with 1, and add this to the value at the index
+56ms beats 86%/49%
+
+### 136 - Single Number
+We can keep a cumulative XOR value for all numbers in the array.
+The number which has no duplicate will not be cancelled out, so will be the remainder.
+96ms beats 98%/73%
+
 ## DP - 1D
 
 ### 1137 - nth Tribonacci Number
