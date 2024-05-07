@@ -325,7 +325,7 @@ return the new length of the queue
 
 ### 643 - Maximum Average Subarray
 
-Sliding window - get initial window sum 0 - k. 
+Sliding window (fixed) - get initial window sum 0 - k. 
 Keep pre_sum and post_sum total until greater max is found. 
 Remember to reset the pre/post sum totals if we find a greater value
 shift left and right pointers of the window by 1
@@ -333,10 +333,17 @@ shift left and right pointers of the window by 1
 
 ### 1456 - Max Num of Vowels in Given Substring Length
 
-Left and right window, create initial substring window and use Counter with map function to only return 
+Left and right window (fixed), create initial substring window and use Counter with map function to only return 
 vowel counts.
 Then check l and r moving the window at end of the loop, -/+ max count so far
 102ms beats 86%/19%
+
+### 1004 - Max Consecutive Ones 3
+Dynamic sliding window. 2 pointers. right iterates through array O(n)
+For each iteration, try always take k from the current value at the right pointer.
+If k goes below 0, we need to make up for it by taking from the left pointer value, and shifting left by 1.
+For each iteration, calculate the longest so far, which is right - left + 1.
+444 ms beats 52%/68%
 
 ## Stack
 
