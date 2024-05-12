@@ -399,3 +399,13 @@ iterate through string to be checked (O(n)) keep another pointer for the target 
 incrementing when a match is found, also decrementing a count. when the count reaches 0 at the
 end of an iteration, we can return True. if we do not reach this point, then the result must be False
 32ms beats 79%/40%
+
+
+### 1679 - Max Number of K Sum Pairs
+2 pointer approach, left = 0, right = n - 1, while left < right.
+Sort the integer array.
+For each iteration, see if the sum the 2 pointer values == k.  If so, we increment count and move both
+pointers towards each other,
+If the sum is greater, we move the right pointer towards the middle.
+If the sum is smaller, we move the left pointer towards the middle.
+482ms beats 85%/49%
