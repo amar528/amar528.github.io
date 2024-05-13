@@ -292,6 +292,18 @@ Once fast reaches end, set slow.next = slow.next.next
 return dummy.next
 576ms beats 92%/64%
 
+### 328 - Odd/Even Linked List
+
+Maintain odd, even pointers and head pointers.
+loop while current pointer is non-null, current = current.next at end of iteration.
+Maintain is_even boolean switch, which flips each iteration.
+if head nodes are not set, they are assigned.  otherwise set the odd/even .next to current, and
+update odd/even to same.
+After iteration has finished, append the even head to the odd.next.
+Ensure we set even.next to None to avoid a cycle.
+34ms beats 89%/98%
+
+
 ## Prefix Sum
 
 ### 1732 - Find Highest Altitude
