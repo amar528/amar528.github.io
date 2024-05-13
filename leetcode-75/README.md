@@ -359,6 +359,16 @@ If k goes below 0, we need to make up for it by taking from the left pointer val
 For each iteration, calculate the longest so far, which is right - left + 1.
 444 ms beats 52%/68%
 
+### 1492 - Longest Subarray after Deleting a Single Element
+Dynamic sliding window.  Left and Right pointer, also keep track of the 0 count, and the maximum
+subarray length found so far.
+Right moves constantly +1 element each iteration.
+We only allow maximum of 1 zero in the sliding window.
+if the right element is a zero, add 1 to zero count.
+move the left pointer while the zero count is greater than 1.
+For each move of the window, update the maximum length so far.
+450ms beats 67%/76%
+
 ## Stack
 
 ### 2390 - Remove Stars from String
