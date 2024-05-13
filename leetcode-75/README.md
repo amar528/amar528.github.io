@@ -359,6 +359,16 @@ If k goes below 0, we need to make up for it by taking from the left pointer val
 For each iteration, calculate the longest so far, which is right - left + 1.
 444 ms beats 52%/68%
 
+### 1492 - Longest Subarray after Deleting a Single Element
+Dynamic sliding window.  Left and Right pointer, also keep track of the 0 count, and the maximum
+subarray length found so far.
+Right moves constantly +1 element each iteration.
+We only allow maximum of 1 zero in the sliding window.
+if the right element is a zero, add 1 to zero count.
+move the left pointer while the zero count is greater than 1.
+For each move of the window, update the maximum length so far.
+450ms beats 67%/76%
+
 ## Stack
 
 ### 2390 - Remove Stars from String
@@ -399,3 +409,13 @@ iterate through string to be checked (O(n)) keep another pointer for the target 
 incrementing when a match is found, also decrementing a count. when the count reaches 0 at the
 end of an iteration, we can return True. if we do not reach this point, then the result must be False
 32ms beats 79%/40%
+
+
+### 1679 - Max Number of K Sum Pairs
+2 pointer approach, left = 0, right = n - 1, while left < right.
+Sort the integer array.
+For each iteration, see if the sum the 2 pointer values == k.  If so, we increment count and move both
+pointers towards each other,
+If the sum is greater, we move the right pointer towards the middle.
+If the sum is smaller, we move the left pointer towards the middle.
+482ms beats 85%/49%
