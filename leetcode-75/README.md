@@ -274,6 +274,15 @@ Use collections.Counter.
 Init a set() Iterate over values() and check if count exists in set. False if so. True once iteration finishes.
 45ms beats 30%/7%
 
+### 2352 - Equal Row and Column Pairs
+Iterate over each row, convert it to a tuple so we can hash it.
+We store the count of each row hash in a default dict.
+We also will keep an overall count of found matches.
+Next, we iterate over each set of columns. We can do this neatly using `for cols in zip(*grid):`
+Again, we convert the columns to a tuple, and hash it. If this hash exists in the row dict,
+we add it to the overall count.
+364ms beats 96%/53%
+
 ## Heap
 
 ### 215 - 4th Largest Element in an Array
