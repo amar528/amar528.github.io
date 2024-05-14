@@ -280,7 +280,7 @@ We store the count of each row hash in a default dict.
 We also will keep an overall count of found matches.
 Next, we iterate over each set of columns. We can do this neatly using `for cols in zip(*grid):`
 Again, we convert the columns to a tuple, and hash it. If this hash exists in the row dict,
-we add it to the overall count.
+we add that row count value to the overall count.
 364ms beats 96%/53%
 
 ## Heap
