@@ -404,6 +404,17 @@ this means a collision, so get the diff and handle each case, setting a to 0, or
 if a is non zero at the end of the while loop, add it to the stack
 71ms beats 97%/24%
 
+### 394 - Decode String
+Using a stack, iterate character by character.
+We push to the stack until we reach a closing bracket ']'
+This case means we want to process a sub-problem, expand it out, pushing the result back to the stack.
+We pop until we reach the opening bracket '['. Pop that, and then pop all the digits until either the
+stack is empty, or we reach a non-numeric character.
+Expand the sub string, and push this back to the stack.
+The result is the stack contents, so we convert to a string.
+30ms beats 84%/92%
+
+
 ## Two Pointers
 
 ### 283 - Move Zeros

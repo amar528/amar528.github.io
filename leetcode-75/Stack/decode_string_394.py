@@ -7,31 +7,27 @@ class Solution:
 
         stack = collections.deque()
 
-        current_string = ''
-        current_count = 0
-
         for c in s:
 
-            if c == '[':
-                # add to the stack and reset
-                stack.append(current_string)
-                stack.append(current_count)
-                current_string = ''
-                current_count = 0
+            if c == ']':
 
-            elif c == ']':
-                # pop from the top of the stack
-                prev_count = stack.pop()
-                prev_string = stack.pop()
+                # pop from the stack until the corresponding open bracket '['
+                sub_string = ''
+                while stack[-1] != '[':
+                    sub_string = stack.pop() + sub_string
 
-                # prepend to current string
-                current_string = prev_string + prev_count * current_string
+                # also pop the closing bracket
+                stack.pop()
 
-            elif c.isdigit():
-                # update the current count
-                current_count = current_count * 10 + int(c)
+                # pop the digits
+                digits = ''
+                while stack and stack[-1].isdigit():
+                    digits = stack.pop() + digits
+
+                # push back to the stack in the expanded form
+                stack.append(sub_string * int(digits))
+
             else:
-                # simply append the character
-                current_string += c
+                stack.append(c)
 
-        return current_string
+        return ''.join(stack)

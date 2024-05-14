@@ -27,3 +27,11 @@ class TestSolution(TestCase):
         result = sol.decodeString(s)
 
         self.assertEqual('abcabccdcdcdef', result)
+
+    def test_decode_string_example25(self):
+        s = "100[leetcode]"
+
+        sol = Solution()
+        result = sol.decodeString(s)
+
+        self.assertEqual('leetcode' * 100, result)
