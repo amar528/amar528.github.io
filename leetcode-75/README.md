@@ -44,6 +44,13 @@ update the new end position, given the resizing.
 finally update the start position to the previous ending one.
 52ms beats 85%/30%
 
+### 345 - Reverse Vowels of a String
+Use 2 pointers, left (0) and right(n - 1). Main loop while left < right
+Move the 2 pointers towards the center, looking for a vowel.  Check the bounds.
+Reverse the chars at left,right if they are both vowels.
+Also need to check if we have a vowel using .lower() on the character to be tested.
+35ms beats 99%/75%
+
 ## Backtracking
 
 ### 17 - Letter Combinations of a Phone Number
@@ -396,6 +403,17 @@ loop while a is moving left (<0) and top of stack[-1] is moving right (>0)
 this means a collision, so get the diff and handle each case, setting a to 0, or pop the stack
 if a is non zero at the end of the while loop, add it to the stack
 71ms beats 97%/24%
+
+### 394 - Decode String
+Using a stack, iterate character by character.
+We push to the stack until we reach a closing bracket ']'
+This case means we want to process a sub-problem, expand it out, pushing the result back to the stack.
+We pop until we reach the opening bracket '['. Pop that, and then pop all the digits until either the
+stack is empty, or we reach a non-numeric character.
+Expand the sub string, and push this back to the stack.
+The result is the stack contents, so we convert to a string.
+30ms beats 84%/92%
+
 
 ## Two Pointers
 
