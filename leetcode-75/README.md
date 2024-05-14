@@ -44,6 +44,13 @@ update the new end position, given the resizing.
 finally update the start position to the previous ending one.
 52ms beats 85%/30%
 
+### 345 - Reverse Vowels of a String
+Use 2 pointers, left (0) and right(n - 1). Main loop while left < right
+Move the 2 pointers towards the center, looking for a vowel.  Check the bounds.
+Reverse the chars at left,right if they are both vowels.
+Also need to check if we have a vowel using .lower() on the character to be tested.
+35ms beats 99%/75%
+
 ## Backtracking
 
 ### 17 - Letter Combinations of a Phone Number
