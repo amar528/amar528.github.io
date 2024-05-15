@@ -113,13 +113,22 @@ Return 1 + max of (recurse node.left , recurse node.right)
 ### 1448 - Count Good Nodes
 
 DFS using recursion - base case return 0 if node is null.
-Use Pre Order traversal (process current node value before recursing).
+Use Pre Order traversal (process current node value before recursing left and right).
 dfs helper method takes current, max_in_path.
 we start recursion with root, root.val as the max so far.
 for each pre order traversal, compare if the val at this node is <= max so far,
 we add 1 to the total count if so, else 0.
 we add this current node value to the recursive calls for .left and .right
 116ms beats 93%/27%
+
+### Path Sum 3
+Using DFS with a running total and a cache of sums->frequency, we can traverse the tree
+and count the number of times the prefix sum has been found in that branch.
+The prefix sum is defined as `(current total - target sum)`
+This means that `target sum == (current total - prefix sum)`
+So for each branch, we count the number of times the prefix sum is encountered.
+41ms beats 89%/38%
+
 
 ### BFS
 
@@ -145,7 +154,7 @@ to the right most.  so if it is valid, we can obtain its value.
 
 ### 700 - Search in a BST
 
-base case of root equal to None. base case of root.val matching search val.
+base case of root equal to None. Using Pre order traversal, base case of root.val matching search val.
 otherwise, if val is smaller and we have a left subtree, recurse left,
 or if val is greater and we have a right subtree, recurse right.
 53ms beats 72%/84%

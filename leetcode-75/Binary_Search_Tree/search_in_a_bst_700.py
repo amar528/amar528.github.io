@@ -1,6 +1,6 @@
 from typing import Optional
 
-from treenode import TreeNode
+from Binary_Tree.treenode import TreeNode
 
 
 class Solution:
@@ -10,6 +10,7 @@ class Solution:
             return None
 
         # base case that we found the value
+        # Pre order traversal
         if root.val == val:
             return root
 
