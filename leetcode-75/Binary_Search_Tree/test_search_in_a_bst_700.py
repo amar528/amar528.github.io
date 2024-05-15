@@ -1,5 +1,5 @@
 from unittest import TestCase
-from treenode import TreeNode
+from Binary_Tree.treenode import *
 from search_in_a_bst_700 import Solution
 
 
