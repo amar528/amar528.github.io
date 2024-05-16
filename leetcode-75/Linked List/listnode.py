@@ -8,6 +8,9 @@ class ListNode:
 
 
 def build_list(arr):
+    if not arr:
+        return None
+
     head = None
     prev = None
     for num in arr:
@@ -24,6 +27,9 @@ def build_list(arr):
 
 
 def build_arr(head):
+    if not head:
+        return []
+    
     arr = []
 
     node = head
