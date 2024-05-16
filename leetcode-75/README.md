@@ -51,6 +51,15 @@ Reverse the chars at left,right if they are both vowels.
 Also need to check if we have a vowel using .lower() on the character to be tested.
 35ms beats 99%/75%
 
+### 1512 - Reverse Words in a String
+Using a stack, we can append each word from the input string by iterating via `.split()`
+We also call `.strip()` on the input string before iteration.
+We pop from the stack whilst it has elements, and append the stripped substring to a result array, 
+also appending a single whitespace character.
+We `.pop()` the final whitespace character from the result array.
+31ms beats 87%/32%
+
+
 ## Backtracking
 
 ### 17 - Letter Combinations of a Phone Number
