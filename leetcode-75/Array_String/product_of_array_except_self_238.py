@@ -1,22 +1,20 @@
-from functools import reduce
-from operator import mul
 from typing import List
 
 
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        n = len(nums)
 
+        n = len(nums)
         result = [0] * n
 
-        # calculate prefix sum for each i (product of nums to left)
+        prefix_product = 1
         for i in range(n):
-            left_sub = nums[0:i]
-            result[i] = reduce(mul, left_sub) if left_sub else 1
+            prefix_product *= nums[i - 1] if i > 0 else 1
+            result[i] = prefix_product
 
-        # add to result: calculate postfix for each i (product of nums to right - iterate in reverse)
-        for i in reversed(range(n)):
-            right_sub = nums[i + 1:] if i < n - 1 else []
-            result[i] *= reduce(mul, right_sub) if right_sub else 1
+        postfix_product = 1
+        for i in reversed(range(n - 1)):
+            postfix_product *= nums[i + 1] if i < n else 1
+            result[i] *= postfix_product
 
         return result

@@ -6,6 +6,8 @@ from product_of_array_except_self_238 import Solution
 class TestSolution(TestCase):
     def test_product_except_self_example1(self):
         nums = [1, 2, 3, 4]
+        #       1  1  2  6 : prefix product
+        #
 
         sol = Solution()
         result = sol.productExceptSelf(nums)
