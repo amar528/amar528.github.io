@@ -88,7 +88,7 @@ the updated total, and the next starting digit.
 ### 374 - Guess Number Higher or Lower
 
 Find mid = `l + (r - l) // 2` - use this to avoid integer overflow
-Start at range 1,n. Too high, move `r = mid-1`, 
+Start at range 1,n. Too high, move `r = mid-1`,
 too low, move `l = mid + 1`
 `30 ms beats 83%/68%`
 
@@ -113,6 +113,30 @@ we also need to perform bounds check as the peak could be at index 0, or n - 1.
 in this case, when moving to the left we also need to check that mid is > 0.
 likewise, if moving to the right, we need to check that mid is < n - 1
 `41ms beats 87%/37%`
+
+### 875 - Koko Eating Bananas
+
+The brute force approach would be to try all possible eating speeds (k) and record the
+minimum that works. Worst case that would be `O(max(p).n)` where `max(p)` is the largest pile,
+and n the number of piles.
+Given we want to find a k that works, we can use Binary Search on the k range `(1, max(p))`,
+which will reduce the time complexity to `O(max(p).log n)`
+So here `left = min speed`, whilst `right = max speed`. The max speed would be equal to the largest
+pile of bananas, given `n <= h` - so we can eat all piles in n hours in the worst case.
+So while `left <= right` we find the mid point, which is our possible k (current eating speed).
+Given this eating speed, we divide each pile by it to find the total hours it would take to eat
+each pile. We round up to the nearest hour using `ceil(pile / speed)`.
+Summing all the hours, we have the total time to eat all piles.
+If this is `<= h` then it means that this new k value is valid. As we want the minimum possible k,
+we compare/swap it with the previous `min_k = min(min_k, new_valid_k)`.
+As this speed worked, we want to next try a slower speed, so we will choose a new k from the
+left portion of the k range, by moving the right (max speed) pointer to `mid - 1`.
+If the hours it took to eat all piles exceeded input h (our target) then we want to try
+a faster speed, so we choose a k from the right portion of the array by updating the left pointer
+to `mid + 1`
+When the iteration ends, we have our minimum k result.
+`239ms beats 96%/57%`
+
 
 ## Binary Tree
 
@@ -342,7 +366,8 @@ When k is reached, we calculate the sum, and retain the maximum sum seen so far.
 
 Create dummy node that points to head
 Use Fast/Slow pointer technique - `slow = next`, `fast = next.next`
-Once fast reaches end, set `slow.next = slow.next.next`
+Once fast reaches end, slow will point to the middle node.
+Set `slow.next = slow.next.next`
 return dummy.next
 `576ms beats 92%/64%`
 
@@ -356,6 +381,18 @@ update odd/even to same.
 After iteration has finished, append the even head to the odd.next.
 Ensure we set even.next to None to avoid a cycle.
 `34ms beats 89%/98%`
+
+### 206 - Reverse Linked List
+
+We have 2 pointers, `curr (head)` and `prev (None)`.
+while curr is valid, we traverse the list.
+We store a temp pointer to the next node `curr.next`
+Then reassign `curr.next` to prev (reversing the direction).
+Finally we update our `prev` pointer to the current node, and `curr` to the temporary pointer,
+which is the next node in the iteration.
+When iteration ends, we return the `prev` pointer, which will point at the new head of the
+reversed list.
+`28ms beats 96%/98%`
 
 ## Prefix Sum
 

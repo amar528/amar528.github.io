@@ -11,3 +11,4 @@ the right pointer: `right = mid - 1`.
 Likewise, if the searched for item is greater than that pointed to by `mid`, we will search the right
 portion of the array, by moving the left pointer: `left = mid + 1`
 We continue like this until the element is found.
+This means rather than operating in a linear way O(n), we are able to process data in O(log n)  
