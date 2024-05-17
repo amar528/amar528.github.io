@@ -63,6 +63,18 @@ also appending a single whitespace character.
 We `.pop()` the final whitespace character from the result array.
 `31ms beats 87%/32%`
 
+### 238 - Product of Array Except Self
+
+We can make 2 passes through the array, forwards and backwards, to execute this in `O(n)`
+Going forwards, calculate the prefix product for every `i` in `nums`, 
+i.e. keep a `prefix` product total using `*=` for every element to the left: `i-1`. For the `0th` element,
+we use a default prefix of 1. We store this `ith` result in a new `result` array.
+Going backwards, calculate the postfix for every `i` in `nums` by keeping a `postfix` product total,
+using `*=` for every element to the right `i+1`. For the `n-1th` element, we use a default postfix of 1.
+We multiply the prefix previously stored at `result[i]` with the postfix sum, updating `result[i]`
+
+`264ms beats 68%/77%`
+
 ## Backtracking
 
 ### 17 - Letter Combinations of a Phone Number
