@@ -1,6 +1,6 @@
 from typing import Optional
 
-from Binary_Tree.treenode import TreeNode
+from treenode import TreeNode
 
 
 class Solution:
