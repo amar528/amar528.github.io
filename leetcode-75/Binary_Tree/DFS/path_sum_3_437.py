@@ -23,9 +23,6 @@ class Solution:
             prefix_sum = total - targetSum
             count = sums[prefix_sum]
 
-            if count > 0:
-                print(f'prefix matched: {prefix_sum} for total {total} and target {targetSum} at node {node} - count is {count}')
-
             # update the frequency of this sum
             sums[total] += 1
             count += dfs(node.left, total) + dfs(node.right, total)
