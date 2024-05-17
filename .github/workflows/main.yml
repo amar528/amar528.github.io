@@ -9,4 +9,4 @@ jobs:
     - name: Run build.sh
       id: run-build-sh
       uses: vargiuscuola/gen-sh-unittest@master
-      run: build.sh
+      run: leetcode-75/build.sh
