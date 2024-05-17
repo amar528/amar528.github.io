@@ -1,0 +1,12 @@
+name: "build.sh"
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Run build.sh
+      id: run-build-sh
+      uses: vargiuscuola/gen-sh-unittest@master
+      run: build.sh
