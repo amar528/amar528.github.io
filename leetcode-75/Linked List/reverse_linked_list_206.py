@@ -9,9 +9,14 @@ class Solution:
         curr, prev = head, None
 
         while curr:
+
+            # remember the next node
             temp = curr.next
 
+            # reassign next to the previous (reverse)
             curr.next = prev
+
+            # update our prev and current pointers
             prev = curr
             curr = temp
 

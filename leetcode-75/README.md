@@ -366,7 +366,8 @@ When k is reached, we calculate the sum, and retain the maximum sum seen so far.
 
 Create dummy node that points to head
 Use Fast/Slow pointer technique - `slow = next`, `fast = next.next`
-Once fast reaches end, set `slow.next = slow.next.next`
+Once fast reaches end, slow will point to the middle node.
+Set `slow.next = slow.next.next`
 return dummy.next
 `576ms beats 92%/64%`
 
@@ -383,6 +384,15 @@ Ensure we set even.next to None to avoid a cycle.
 
 ### 206 - Reverse Linked List
 
+We have 2 pointers, `curr (head)` and `prev (None)`.
+while curr is valid, we traverse the list.
+We store a temp pointer to the next node `curr.next`
+Then reassign `curr.next` to prev (reversing the direction).
+Finally we update our `prev` pointer to the current node, and `curr` to the temporary pointer,
+which is the next node in the iteration.
+When iteration ends, we return the `prev` pointer, which will point at the new head of the
+reversed list.
+`28ms beats 96%/98%`
 
 ## Prefix Sum
 
