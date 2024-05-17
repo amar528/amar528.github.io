@@ -16,8 +16,9 @@ class Solution:
             # reassign next to the previous (reverse)
             curr.next = prev
 
-            # update our prev and current pointers
+            # update our prev and current pointers to the next nodes
             prev = curr
             curr = temp
 
+        # prev will end up at the end of the original list, which is the new head
         return prev
